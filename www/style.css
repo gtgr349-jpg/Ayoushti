@@ -1,5 +1,5 @@
-/* ==========================================
-   🌙 ايوشتي
+﻿/* ==========================================
+   ðŸŒ™ Ø§ÙŠÙˆØ´ØªÙŠ
 ========================================== */
 
 * {
@@ -16,9 +16,9 @@ body {
         "Tahoma",
         sans-serif;
 
-    background: #f5f1e8;
+    background: #FFF9FB;
 
-    color: #263b2d;
+    color: #9E496D;
 
     min-height: 100vh;
 }
@@ -74,7 +74,7 @@ body {
 
 .header p {
 
-    color: #68756b;
+    color: #8A6575;
 
     font-size: 16px;
 }
@@ -130,7 +130,7 @@ body {
 
 .trip-message {
 
-    color: #68756b;
+    color: #8A6575;
 
     line-height: 1.9;
 
@@ -144,7 +144,7 @@ body {
 
 .message-card {
 
-    background: #e8eee8;
+    background: #F8E6EE;
 
     border-radius: 24px;
 
@@ -226,7 +226,7 @@ body {
 
     margin-top: 8px;
 
-    color: #263b2d;
+    color: #9E496D;
 }
 
 
@@ -257,7 +257,7 @@ body {
 
     text-align: center;
 
-    color: #68756b;
+    color: #8A6575;
 
     margin-bottom: 20px;
 }
@@ -279,7 +279,7 @@ body {
 
     border-radius: 15px;
 
-    color: #263b2d;
+    color: #9E496D;
 
     cursor: pointer;
 
@@ -331,7 +331,7 @@ body {
 
     border-radius: 18px;
 
-    background: #e8eee8;
+    background: #F8E6EE;
 
     display: flex;
 
@@ -369,7 +369,7 @@ body {
 
 .journey-card p {
 
-    color: #68756b;
+    color: #8A6575;
 
     line-height: 1.8;
 
@@ -387,7 +387,7 @@ body {
 
 .journey-card li {
 
-    background: #f5f1e8;
+    background: #FFF9FB;
 
     padding: 10px 12px;
 
@@ -424,7 +424,7 @@ footer {
     display: none !important;
 }
 /* ==========================================
-   🕋 عمرتي
+   ðŸ•‹ Ø¹Ù…Ø±ØªÙŠ
 ========================================== */
 
 .umrah-header {
@@ -442,7 +442,7 @@ footer {
 }
 
 .umrah-header p {
-    color: #68756b;
+    color: #8A6575;
     margin-top: 8px;
 }
 
@@ -468,11 +468,11 @@ footer {
 
     border-radius: 50%;
 
-    background: #e1e6e1;
+    background: #F0DCE5;
 }
 
 .progress-item.active span {
-    background: #263b2d;
+    background: #9E496D;
     color: white;
 }
 
@@ -485,7 +485,7 @@ footer {
 .progress-line {
     width: 25px;
     height: 2px;
-    background: #d5dad5;
+    background: #E7CDD8;
 }
 
 
@@ -497,14 +497,14 @@ footer {
 }
 
 .step-number {
-    color: #68756b;
+    color: #8A6575;
     font-size: 13px;
     margin-bottom: 8px;
 }
 
 
 .info-box {
-    background: #f5f1e8;
+    background: #FFF9FB;
     border-radius: 18px;
     padding: 17px;
     margin: 15px 0;
@@ -541,7 +541,7 @@ footer {
 }
 
 .note {
-    color: #68756b;
+    color: #8A6575;
     margin-top: 10px;
 }
 
@@ -555,7 +555,7 @@ footer {
     border: none;
     border-radius: 18px;
     padding: 17px;
-    background: #263b2d;
+    background: #9E496D;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -572,7 +572,7 @@ footer {
 }
 
 .counter-title {
-    color: #68756b;
+    color: #8A6575;
 }
 
 .counter-number {
@@ -613,15 +613,15 @@ footer {
 
 .completion-card p {
     line-height: 2;
-    color: #68756b;
+    color: #8A6575;
     margin-bottom: 12px;
 }
 
 .special-message {
-    background: #e8eee8;
+    background: #F8E6EE;
     padding: 15px;
     border-radius: 18px;
-    color: #263b2d !important;
+    color: #9E496D !important;
 }
 
 
@@ -647,7 +647,7 @@ footer {
 }
 
 /* ==========================================
-   📅 تطوير صفحة رحلتي
+   ðŸ“… ØªØ·ÙˆÙŠØ± ØµÙØ­Ø© Ø±Ø­Ù„ØªÙŠ
 ========================================== */
 
 .journey-card {
@@ -661,11 +661,11 @@ footer {
 
 
 /* ==========================================
-   📍 اليوم الحالي
+   ðŸ“ Ø§Ù„ÙŠÙˆÙ… Ø§Ù„Ø­Ø§Ù„ÙŠ
 ========================================== */
 
 .journey-card.today {
-    border: 2px solid #263b2d;
+    border: 2px solid #9E496D;
 
     box-shadow:
         0 10px 28px rgba(38, 59, 45, 0.15);
@@ -675,11 +675,11 @@ footer {
 
 .journey-card.today::before {
 
-    content: "يومك الآن 🤍";
+    content: "ÙŠÙˆÙ…Ùƒ Ø§Ù„Ø¢Ù† ðŸ¤";
 
     display: block;
 
-    background: #263b2d;
+    background: #9E496D;
 
     color: white;
 
@@ -699,7 +699,7 @@ footer {
 
 
 /* ==========================================
-   🔒 الأيام القادمة
+   ðŸ”’ Ø§Ù„Ø£ÙŠØ§Ù… Ø§Ù„Ù‚Ø§Ø¯Ù…Ø©
 ========================================== */
 
 .journey-card.upcoming {
@@ -710,19 +710,19 @@ footer {
 
 .journey-card.upcoming .journey-icon {
 
-    background: #eeeeea;
+    background: #F5E9EE;
 
 }
 
 .journey-card.upcoming h4 {
 
-    color: #68756b;
+    color: #8A6575;
 
 }
 
 
 /* ==========================================
-   ✅ الأيام المكتملة
+   âœ… Ø§Ù„Ø£ÙŠØ§Ù… Ø§Ù„Ù…ÙƒØªÙ…Ù„Ø©
 ========================================== */
 
 .journey-card.completed {
@@ -733,19 +733,19 @@ footer {
 
 .journey-card.completed .journey-icon {
 
-    background: #e8eee8;
+    background: #F8E6EE;
 
 }
 
 .journey-card.completed .journey-status {
 
-    color: #263b2d;
+    color: #9E496D;
 
 }
 
 
 /* ==========================================
-   🏷️ حالة اليوم
+   ðŸ·ï¸ Ø­Ø§Ù„Ø© Ø§Ù„ÙŠÙˆÙ…
 ========================================== */
 
 .journey-status {
@@ -758,9 +758,9 @@ footer {
 
     border-radius: 20px;
 
-    background: #f5f1e8;
+    background: #FFF9FB;
 
-    color: #68756b;
+    color: #8A6575;
 
     font-size: 12px;
 
@@ -769,7 +769,7 @@ footer {
 
 
 /* ==========================================
-   📱 تحسين الموبايل
+   ðŸ“± ØªØ­Ø³ÙŠÙ† Ø§Ù„Ù…ÙˆØ¨Ø§ÙŠÙ„
 ========================================== */
 
 @media (max-width: 380px) {
@@ -801,7 +801,7 @@ footer {
 }
 
 /* =========================================
-   🗺️ خريطة أيوشتي
+   ðŸ—ºï¸ Ø®Ø±ÙŠØ·Ø© Ø£ÙŠÙˆØ´ØªÙŠ
 ========================================= */
 
 .map-tabs {
@@ -823,8 +823,8 @@ footer {
 }
 
 .map-tab.active {
-    background: #eee1e8;
-    color: #6d3f58;
+    background: #F8E6EE;
+    color: #9E496D;
     font-weight: bold;
 }
 
@@ -858,7 +858,7 @@ footer {
     align-items: center;
     justify-content: center;
     font-size: 23px;
-    background: #f1e4ea;
+    background: #FBEAF1;
 }
 
 .map-location strong {
@@ -878,7 +878,7 @@ footer {
 .route-line {
     width: 4px;
     height: 55px;
-    background: #b98da6;
+    background: #C86B91;
     margin: auto;
     border-radius: 10px;
 }
@@ -886,13 +886,13 @@ footer {
 .route-info {
     text-align: center;
     margin-top: 8px;
-    color: #6d3f58;
+    color: #9E496D;
     font-size: 14px;
 }
 
 
 /* =========================================
-   🕋 خريطة الحرم Offline
+   ðŸ•‹ Ø®Ø±ÙŠØ·Ø© Ø§Ù„Ø­Ø±Ù… Offline
 ========================================= */
 
 .haram-map {
@@ -949,13 +949,13 @@ footer {
     transform: translate(-50%, -50%);
     width: 170px;
     height: 170px;
-    border: 3px dashed #b98da6;
+    border: 3px dashed #C86B91;
     border-radius: 50%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     padding-top: 8px;
-    color: #6d3f58;
+    color: #9E496D;
 }
 
 .masaa {
@@ -1019,7 +1019,7 @@ footer {
     margin-top: 15px;
     padding: 12px;
     border-radius: 14px;
-    background: #faf6f8;
+    background: #FFF9FB;
     color: #666;
     font-size: 13px;
     line-height: 1.7;
