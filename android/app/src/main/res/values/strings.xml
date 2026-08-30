@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ayoushti</string>
+    <string name="title_activity_main">Ayoushti</string>
+    <string name="package_name">com.eslamashour.ayoushti</string>
+    <string name="custom_url_scheme">com.eslamashour.ayoushti</string>
+</resources>

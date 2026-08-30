@@ -1,0 +1,167 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1000 700"
+    width="100%"
+    height="100%">
+
+    <rect
+        width="1000"
+        height="700"
+        fill="#eee8dc"/>
+
+    <!-- ساحة المسجد الحرام -->
+
+    <rect
+        x="100"
+        y="70"
+        width="800"
+        height="560"
+        rx="80"
+        fill="#d8d1c4"/>
+
+
+    <!-- صحن المطاف -->
+
+    <ellipse
+        cx="500"
+        cy="350"
+        rx="280"
+        ry="210"
+        fill="#f8f5ee"
+        stroke="#c9c0b1"
+        stroke-width="8"/>
+
+
+    <!-- الكعبة -->
+
+    <rect
+        x="430"
+        y="280"
+        width="140"
+        height="140"
+        rx="8"
+        fill="#111"/>
+
+    <rect
+        x="430"
+        y="300"
+        width="140"
+        height="20"
+        fill="#d4af37"/>
+
+
+    <text
+        x="500"
+        y="365"
+        text-anchor="middle"
+        font-size="38"
+        fill="white">
+
+        🕋
+
+    </text>
+
+
+    <!-- الصفا -->
+
+    <rect
+        x="110"
+        y="300"
+        width="150"
+        height="70"
+        rx="20"
+        fill="#ffffff"/>
+
+    <text
+        x="185"
+        y="345"
+        text-anchor="middle"
+        font-size="28"
+        fill="#333">
+
+        الصفا
+
+    </text>
+
+
+    <!-- المروة -->
+
+    <rect
+        x="740"
+        y="300"
+        width="150"
+        height="70"
+        rx="20"
+        fill="#ffffff"/>
+
+    <text
+        x="815"
+        y="345"
+        text-anchor="middle"
+        font-size="28"
+        fill="#333">
+
+        المروة
+
+    </text>
+
+
+    <!-- زمزم -->
+
+    <circle
+        cx="620"
+        cy="480"
+        r="45"
+        fill="#ffffff"
+        stroke="#6aa5b8"
+        stroke-width="6"/>
+
+    <text
+        x="620"
+        y="490"
+        text-anchor="middle"
+        font-size="22"
+        fill="#333">
+
+        زمزم
+
+    </text>
+
+
+    <!-- مدخل -->
+
+    <rect
+        x="440"
+        y="600"
+        width="120"
+        height="45"
+        rx="15"
+        fill="#ffffff"/>
+
+    <text
+        x="500"
+        y="630"
+        text-anchor="middle"
+        font-size="22"
+        fill="#333">
+
+        🚪 المدخل
+
+    </text>
+
+
+    <!-- عنوان -->
+
+    <text
+        x="500"
+        y="45"
+        text-anchor="middle"
+        font-size="32"
+        font-weight="bold"
+        fill="#333">
+
+        خريطة المسجد الحرام
+
+    </text>
+
+</svg>

@@ -1,0 +1,7 @@
+﻿node_modules/
+style.css.backup
+index.html.backup
+.DS_Store
+Thumbs.db
+
+android/.idea/

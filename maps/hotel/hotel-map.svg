@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1000 700"
+     width="100%"
+     height="100%">
+
+    <rect width="1000" height="700" fill="#eee8dc"/>
+
+    <!-- المنطقة المحيطة بالفندق -->
+    <rect x="80" y="80"
+          width="840"
+          height="540"
+          rx="40"
+          fill="#d8d1c4"/>
+
+    <!-- الشارع الرئيسي -->
+    <path d="M0 520 C250 430 700 430 1000 520"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="70"/>
+
+    <!-- الفندق -->
+    <rect x="360" y="180"
+          width="280"
+          height="180"
+          rx="25"
+          fill="#ffffff"
+          stroke="#777"
+          stroke-width="8"/>
+
+    <text x="500" y="255"
+          text-anchor="middle"
+          font-size="30"
+          font-weight="bold"
+          fill="#333">
+        🏨
+    </text>
+
+    <text x="500" y="305"
+          text-anchor="middle"
+          font-size="25"
+          fill="#333">
+        أبراج القصواء
+    </text>
+
+    <text x="500" y="340"
+          text-anchor="middle"
+          font-size="18"
+          fill="#555">
+        Al Qaswaa Tower Hotel
+    </text>
+
+    <!-- موقع الفندق -->
+    <circle cx="500" cy="400"
+            r="18"
+            fill="#c62828"/>
+
+    <text x="500" y="445"
+          text-anchor="middle"
+          font-size="22"
+          fill="#333">
+        📍 موقع الفندق
+    </text>
+
+    <!-- اتجاه الحرم -->
+    <path d="M500 160 L500 90"
+          stroke="#333"
+          stroke-width="8"
+          marker-end="url(#arrow)"/>
+
+    <text x="500" y="65"
+          text-anchor="middle"
+          font-size="26"
+          font-weight="bold"
+          fill="#333">
+        🕋 اتجاه الحرم
+    </text>
+
+    <!-- سهم -->
+    <defs>
+        <marker id="arrow"
+                markerWidth="10"
+                markerHeight="10"
+                refX="5"
+                refY="5"
+                orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z"
+                  fill="#333"/>
+        </marker>
+    </defs>
+
+    <!-- العنوان -->
+    <text x="500" y="570"
+          text-anchor="middle"
+          font-size="28"
+          font-weight="bold"
+          fill="#333">
+        خريطة الفندق
+    </text>
+
+    <text x="500" y="605"
+          text-anchor="middle"
+          font-size="20"
+          fill="#555">
+        مكة المكرمة
+    </text>
+
+</svg>
