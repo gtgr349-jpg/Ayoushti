@@ -1,0 +1,1026 @@
+/* ==========================================
+   🌙 ايوشتي
+========================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        "Tahoma",
+        sans-serif;
+
+    background: #f5f1e8;
+
+    color: #263b2d;
+
+    min-height: 100vh;
+}
+
+
+.app {
+
+    width: 100%;
+
+    max-width: 480px;
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    padding:
+        25px
+        18px
+        30px;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header {
+
+    text-align: center;
+
+    padding:
+        20px
+        0
+        25px;
+}
+
+
+.logo {
+
+    font-size: 45px;
+
+    margin-bottom: 5px;
+}
+
+
+.header h1 {
+
+    font-size: 38px;
+
+    margin-bottom: 8px;
+}
+
+
+.header p {
+
+    color: #68756b;
+
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   TRIP CARD
+========================================== */
+
+.trip-card {
+
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.07);
+
+    margin-bottom: 18px;
+}
+
+
+.trip-icon {
+
+    font-size: 48px;
+
+    margin-bottom: 10px;
+}
+
+
+.trip-card h2 {
+
+    font-size: 21px;
+
+    margin-bottom: 15px;
+}
+
+
+.trip-day {
+
+    font-size: 27px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+
+.trip-message {
+
+    color: #68756b;
+
+    line-height: 1.9;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   MESSAGE
+========================================== */
+
+.message-card {
+
+    background: #e8eee8;
+
+    border-radius: 24px;
+
+    padding: 22px;
+
+    margin-bottom: 20px;
+}
+
+
+.section-title {
+
+    font-weight: bold;
+
+    font-size: 17px;
+
+    margin-bottom: 12px;
+}
+
+
+.message-card p {
+
+    line-height: 2;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   MENU
+========================================== */
+
+.menu {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+.menu button {
+
+    border: none;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 20px 10px;
+
+    font-size: 27px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.menu button:active {
+
+    transform: scale(0.96);
+
+}
+
+
+.menu button span {
+
+    display: block;
+
+    font-size: 15px;
+
+    margin-top: 8px;
+
+    color: #263b2d;
+}
+
+
+/* ==========================================
+   SECTIONS
+========================================== */
+
+.page-section {
+
+    margin-top: 10px;
+}
+
+
+.page-section h2 {
+
+    text-align: center;
+
+    font-size: 27px;
+
+    margin:
+        15px
+        0
+        8px;
+}
+
+
+.section-subtitle {
+
+    text-align: center;
+
+    color: #68756b;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   BACK BUTTON
+========================================== */
+
+.back-button {
+
+    border: none;
+
+    background: white;
+
+    padding:
+        12px
+        18px;
+
+    border-radius: 15px;
+
+    color: #263b2d;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.05);
+}
+
+
+/* ==========================================
+   JOURNEY CARD
+========================================== */
+
+.journey-card {
+
+    background: white;
+
+    border-radius: 23px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, 0.05);
+}
+
+
+.journey-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 15px;
+}
+
+
+.journey-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 18px;
+
+    background: #e8eee8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+
+.journey-header h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 4px;
+}
+
+
+.journey-header small {
+
+    color: #89928b;
+
+    font-size: 13px;
+}
+
+
+.journey-card h4 {
+
+    font-size: 19px;
+
+    margin-bottom: 8px;
+}
+
+
+.journey-card p {
+
+    color: #68756b;
+
+    line-height: 1.8;
+
+    margin-bottom: 12px;
+
+    font-size: 14px;
+}
+
+
+.journey-card ul {
+
+    list-style: none;
+}
+
+
+.journey-card li {
+
+    background: #f5f1e8;
+
+    padding: 10px 12px;
+
+    border-radius: 12px;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: #89928b;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   HIDDEN
+========================================== */
+
+.hidden {
+
+    display: none !important;
+}
+/* ==========================================
+   🕋 عمرتي
+========================================== */
+
+.umrah-header {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.umrah-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.umrah-header h2 {
+    font-size: 28px;
+}
+
+.umrah-header p {
+    color: #68756b;
+    margin-top: 8px;
+}
+
+
+.umrah-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.progress-item {
+    text-align: center;
+}
+
+.progress-item span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: #e1e6e1;
+}
+
+.progress-item.active span {
+    background: #263b2d;
+    color: white;
+}
+
+.progress-item small {
+    display: block;
+    margin-top: 5px;
+    font-size: 10px;
+}
+
+.progress-line {
+    width: 25px;
+    height: 2px;
+    background: #d5dad5;
+}
+
+
+.umrah-step-card {
+    background: white;
+    border-radius: 25px;
+    padding: 22px;
+    box-shadow: 0 7px 20px rgba(0,0,0,0.05);
+}
+
+.step-number {
+    color: #68756b;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+
+.info-box {
+    background: #f5f1e8;
+    border-radius: 18px;
+    padding: 17px;
+    margin: 15px 0;
+}
+
+.info-box h4 {
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.info-box ul {
+    padding-right: 20px;
+}
+
+.info-box li {
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+
+
+.talbiyah,
+.dua {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    line-height: 2.2;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.note {
+    color: #68756b;
+    margin-top: 10px;
+}
+
+.important {
+    font-weight: bold;
+}
+
+
+.primary-button {
+    width: 100%;
+    border: none;
+    border-radius: 18px;
+    padding: 17px;
+    background: #263b2d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+.tawaf-counter {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 7px 20px rgba(0,0,0,0.05);
+}
+
+.counter-title {
+    color: #68756b;
+}
+
+.counter-number {
+    font-size: 70px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.counter-total {
+    color: #89928b;
+}
+
+.tawaf-dots {
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 5px;
+    margin: 18px 0;
+}
+
+
+.completion-card {
+    background: white;
+    border-radius: 28px;
+    padding: 35px 22px;
+    text-align: center;
+    margin-top: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.completion-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.completion-card h2 {
+    margin-bottom: 15px;
+}
+
+.completion-card p {
+    line-height: 2;
+    color: #68756b;
+    margin-bottom: 12px;
+}
+
+.special-message {
+    background: #e8eee8;
+    padding: 15px;
+    border-radius: 18px;
+    color: #263b2d !important;
+}
+
+
+.sai-route {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 7px 20px rgba(0,0,0,0.05);
+}
+
+.sai-point {
+    font-size: 20px;
+    margin: 15px;
+}
+
+.sai-point span {
+    margin-right: 8px;
+}
+
+.sai-arrow {
+    font-size: 30px;
+}
+
+/* ==========================================
+   📅 تطوير صفحة رحلتي
+========================================== */
+
+.journey-card {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+/* ==========================================
+   📍 اليوم الحالي
+========================================== */
+
+.journey-card.today {
+    border: 2px solid #263b2d;
+
+    box-shadow:
+        0 10px 28px rgba(38, 59, 45, 0.15);
+
+    transform: scale(1.02);
+}
+
+.journey-card.today::before {
+
+    content: "يومك الآن 🤍";
+
+    display: block;
+
+    background: #263b2d;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 7px;
+
+    margin:
+        -20px
+        -20px
+        15px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   🔒 الأيام القادمة
+========================================== */
+
+.journey-card.upcoming {
+
+    opacity: 0.72;
+
+}
+
+.journey-card.upcoming .journey-icon {
+
+    background: #eeeeea;
+
+}
+
+.journey-card.upcoming h4 {
+
+    color: #68756b;
+
+}
+
+
+/* ==========================================
+   ✅ الأيام المكتملة
+========================================== */
+
+.journey-card.completed {
+
+    opacity: 0.85;
+
+}
+
+.journey-card.completed .journey-icon {
+
+    background: #e8eee8;
+
+}
+
+.journey-card.completed .journey-status {
+
+    color: #263b2d;
+
+}
+
+
+/* ==========================================
+   🏷️ حالة اليوم
+========================================== */
+
+.journey-status {
+
+    display: inline-block;
+
+    padding:
+        6px
+        11px;
+
+    border-radius: 20px;
+
+    background: #f5f1e8;
+
+    color: #68756b;
+
+    font-size: 12px;
+
+    margin-bottom: 12px;
+}
+
+
+/* ==========================================
+   📱 تحسين الموبايل
+========================================== */
+
+@media (max-width: 380px) {
+
+    .app {
+
+        padding:
+            20px
+            14px
+            25px;
+
+    }
+
+    .journey-card {
+
+        padding: 17px;
+
+    }
+
+    .journey-card.today::before {
+
+        margin:
+            -17px
+            -17px
+            13px;
+
+    }
+
+}
+
+/* =========================================
+   🗺️ خريطة أيوشتي
+========================================= */
+
+.map-tabs {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.map-tab {
+    flex: 1;
+    border: none;
+    padding: 14px 10px;
+    border-radius: 16px;
+    background: #f3f3f3;
+    color: #555;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.map-tab.active {
+    background: #eee1e8;
+    color: #6d3f58;
+    font-weight: bold;
+}
+
+.map-view {
+    width: 100%;
+}
+
+.map-card,
+.haram-map-card {
+    background: #fff;
+    border-radius: 22px;
+    padding: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    margin-bottom: 15px;
+}
+
+.map-location {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 16px;
+    background: #fafafa;
+}
+
+.map-location-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    background: #f1e4ea;
+}
+
+.map-location strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.map-location small {
+    color: #777;
+}
+
+.map-route {
+    position: relative;
+    padding: 20px 0 20px 0;
+}
+
+.route-line {
+    width: 4px;
+    height: 55px;
+    background: #b98da6;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.route-info {
+    text-align: center;
+    margin-top: 8px;
+    color: #6d3f58;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   🕋 خريطة الحرم Offline
+========================================= */
+
+.haram-map {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    margin-top: 15px;
+    border-radius: 20px;
+    background:
+        linear-gradient(90deg,
+            transparent 49%,
+            rgba(120,120,120,0.08) 50%,
+            transparent 51%),
+        linear-gradient(
+            transparent 49%,
+            rgba(120,120,120,0.08) 50%,
+            transparent 51%);
+    background-size: 50px 50px;
+    overflow: hidden;
+}
+
+.kaaba {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 0 0 10px rgba(150,150,150,0.08);
+}
+
+.kaaba span,
+.mataf span,
+.masaa span,
+.safa span,
+.marwa span,
+.gate span {
+    display: block;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+.mataf {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170px;
+    height: 170px;
+    border: 3px dashed #b98da6;
+    border-radius: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 8px;
+    color: #6d3f58;
+}
+
+.masaa {
+    position: absolute;
+    right: 8%;
+    top: 38%;
+    width: 70px;
+    height: 150px;
+    border-radius: 35px;
+    background: rgba(100,170,120,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.safa {
+    position: absolute;
+    right: 8%;
+    top: 25%;
+    font-size: 22px;
+}
+
+.marwa {
+    position: absolute;
+    right: 8%;
+    bottom: 18%;
+    font-size: 22px;
+}
+
+.gate {
+    position: absolute;
+    font-size: 18px;
+    text-align: center;
+}
+
+.gate-1 {
+    bottom: 8%;
+    left: 10%;
+}
+
+.gate-2 {
+    top: 8%;
+    left: 12%;
+}
+
+.gate-3 {
+    top: 8%;
+    right: 12%;
+}
+
+.gate-4 {
+    bottom: 8%;
+    right: 12%;
+}
+
+.offline-note {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 14px;
+    background: #faf6f8;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.7;
+}
