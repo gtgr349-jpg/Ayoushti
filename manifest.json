@@ -1,8 +1,8 @@
 {
   "id": "/index.html",
-  "name": "أيوشتي ❤️",
-  "short_name": "أيوشتي",
-  "description": "رحلة أيوشتي وتذكيراتها وإشعاراتها",
+  "name": "\u0623\u064a\u0648\u0634\u062a\u064a",
+  "short_name": "\u0623\u064a\u0648\u0634\u062a\u064a",
+  "description": "\u0631\u062d\u0644\u0629 \u0623\u064a\u0648\u0634\u062a\u064a \u0648\u062a\u0630\u0643\u064a\u0631\u0627\u062a\u0647\u0627 \u0648\u0625\u0634\u0639\u0627\u0631\u0627\u062a\u0647\u0627",
   "start_url": "/index.html",
   "scope": "/",
   "display": "standalone",
@@ -11,16 +11,29 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     },
     {
-      "src": "/icon-512.png",
+      "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "1170x2532",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "screenshot-desktop.png",
+      "sizes": "2560x1439",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ]
 }
