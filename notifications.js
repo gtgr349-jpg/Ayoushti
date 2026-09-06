@@ -5,61 +5,105 @@ async function enableAyoushtiNotifications() {
 
     const button = document.getElementById("notificationButton");
 
-    if (LocalNotifications) {
-        try {
+    try {
+
+        // ==========================================
+        // 📱 Capacitor / Android
+        // ==========================================
+
+        if (LocalNotifications) {
+
             const permission =
                 await LocalNotifications.requestPermissions();
 
             if (permission.display !== "granted") {
-                alert("âš ï¸ Ù„Ø§Ø²Ù… ØªØ³Ù…Ø­ÙŠ Ù„Ù„ØªØ·Ø¨ÙŠÙ‚ Ø¨Ø§Ù„Ø¥Ø´Ø¹Ø§Ø±Ø§Øª Ù…Ù† Ø¥Ø¹Ø¯Ø§Ø¯Ø§Øª Ø§Ù„Ù‡Ø§ØªÙ.");
+
+                alert(
+                    "⚠️ لازم تسمحي للتطبيق بإرسال الإشعارات من إعدادات الهاتف."
+                );
+
                 return;
             }
 
+            if (button) {
+                button.textContent = "🔔 الإشعارات مفعلة";
+            }
+
+            console.log(
+                "✅ Local Notifications permission granted"
+            );
+
             return;
-
-        } catch (error) {
-            console.error("âŒ Native Notification Error:", error);
         }
-    }
 
-    if (!("Notification" in window)) {
-        alert("âš ï¸ Ø§Ù„Ø¥Ø´Ø¹Ø§Ø±Ø§Øª ØºÙŠØ± Ù…Ø¯Ø¹ÙˆÙ…Ø© Ø¹Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ø¬Ù‡Ø§Ø² Ø£Ùˆ Ø§Ù„Ù…ØªØµÙØ­.");
-        return;
-    }
 
-    try {
+        // ==========================================
+        // 🌐 PWA / Browser
+        // ==========================================
+
+        if (!("Notification" in window)) {
+
+            alert(
+                "⚠️ الإشعارات غير مدعومة على هذا الجهاز."
+            );
+
+            return;
+        }
+
 
         let permission = Notification.permission;
 
         if (permission === "default") {
-            permission = await Notification.requestPermission();
+
+            permission =
+                await Notification.requestPermission();
         }
 
+
         if (permission !== "granted") {
-            alert("âš ï¸ Ù„Ø§Ø²Ù… ØªØ³Ù…Ø­ÙŠ Ù„Ù„Ù…ØªØµÙØ­ Ø¨Ø¥Ø±Ø³Ø§Ù„ Ø§Ù„Ø¥Ø´Ø¹Ø§Ø±Ø§Øª.");
+
+            alert(
+                "⚠️ لازم تسمحي للمتصفح بإرسال الإشعارات."
+            );
+
             return;
         }
 
-        try {
 
-            const registration =
+        // التأكد من وجود Service Worker
+        if ("serviceWorker" in navigator) {
+
+            try {
+
                 await navigator.serviceWorker.ready;
 
-        } catch (serviceWorkerError) {
+                console.log(
+                    "✅ Service Worker ready for notifications"
+                );
 
-            console.warn(
-                "Service Worker notification failed:",
-                serviceWorkerError
-            );
+            } catch (serviceWorkerError) {
+
+                console.warn(
+                    "⚠️ Service Worker notification setup failed:",
+                    serviceWorkerError
+                );
+            }
         }
+
+
+        if (button) {
+            button.textContent = "🔔 الإشعارات مفعلة";
+        }
+
+        console.log(
+            "✅ Browser notifications permission granted"
+        );
 
     } catch (error) {
 
         console.error(
-            "âŒ Browser Notification Error:",
+            "❌ Notification setup failed:",
             error
         );
-
-        alert("Ø­ØµÙ„ Ø®Ø·Ø£ Ø£Ø«Ù†Ø§Ø¡ ØªÙØ¹ÙŠÙ„ Ø§Ù„Ø¥Ø´Ø¹Ø§Ø±Ø§Øª.");
     }
 }
