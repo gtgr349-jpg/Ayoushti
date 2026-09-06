@@ -1,1026 +1,3499 @@
-/* ==========================================
-   ðŸŒ™ Ø§ÙŠÙˆØ´ØªÙŠ
-========================================== */
+﻿/* =========================================================
+   AYOUSHTI — PREMIUM MOBILE UI
+   ========================================================= */
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
+:root {
+    --bg: #fff8fb;
+    --surface: rgba(255, 255, 255, 0.88);
+    --surface-solid: #ffffff;
+
+    --primary: #a95778;
+    --primary-dark: #8d3f60;
+    --primary-soft: #f6e5ec;
+
+    --text: #4b3a42;
+    --text-soft: #8d7b83;
+
+    --border: rgba(169, 87, 120, 0.10);
+
+    --shadow:
+        0 14px 40px rgba(110, 58, 78, 0.09);
+
+    --radius: 24px;
+}
+
+html {
+    min-height: 100%;
+    background: var(--bg);
+}
 
 body {
-
+    min-height: 100vh;
     font-family:
+        "Segoe UI",
+        Tahoma,
         Arial,
-        "Tahoma",
         sans-serif;
 
-    background: #FFF9FB;
+    color: var(--text);
 
-    color: #9E496D;
-
-    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(246, 220, 231, 0.65),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 0% 45%,
+            rgba(255, 235, 242, 0.75),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #fffafd 0%,
+            #fff7fa 55%,
+            #fff3f7 100%
+        );
 }
 
 
+/* =========================================================
+   APP
+   ========================================================= */
+
 .app {
-
     width: 100%;
-
-    max-width: 480px;
+    max-width: 520px;
 
     min-height: 100vh;
 
     margin: auto;
-
     padding:
-        25px
-        18px
-        30px;
+        max(18px, env(safe-area-inset-top))
+        17px
+        max(28px, env(safe-area-inset-bottom));
+
+    overflow: hidden;
 }
 
 
-/* ==========================================
+/* =========================================================
    HEADER
-========================================== */
+   ========================================================= */
 
 .header {
+    position: relative;
 
-    text-align: center;
+    padding: 12px 4px 22px;
 
-    padding:
-        20px
-        0
-        25px;
+    text-align: right;
 }
 
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
 
 .logo {
+    width: 58px;
+    height: 58px;
 
-    font-size: 45px;
+    display: grid;
+    place-items: center;
 
-    margin-bottom: 5px;
+    flex-shrink: 0;
+
+    border-radius: 20px;
+
+    font-size: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #f8e5ed
+        );
+
+    border: 1px solid rgba(169, 87, 120, .08);
+
+    box-shadow:
+        0 10px 28px rgba(120, 62, 84, .10);
 }
 
+.header-text {
+    min-width: 0;
+}
+
+.welcome-text {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+    font-weight: 600;
+}
 
 .header h1 {
+    font-size: 28px;
+    line-height: 1.1;
 
-    font-size: 38px;
+    font-weight: 900;
 
-    margin-bottom: 8px;
+    color: var(--primary-dark);
+}
+
+.header p {
+    margin-top: 5px;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+}
+
+.header-decoration {
+    position: absolute;
+
+    left: 5px;
+    bottom: 13px;
+
+    color: #d79ab3;
+
+    font-size: 17px;
+
+    opacity: .7;
 }
 
 
-.header p {
+/* =========================================================
+   TRIP CARD
+   ========================================================= */
 
-    color: #8A6575;
+.trip-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 185px;
+
+    padding: 20px;
+
+    border-radius: 30px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #b86688 0%,
+            #a14d70 48%,
+            #873d5e 100%
+        );
+
+    box-shadow:
+        0 20px 45px rgba(145, 65, 94, .22);
+
+    margin-bottom: 15px;
+}
+
+.trip-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    top: -100px;
+    left: -70px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.09);
+}
+
+.trip-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    bottom: -70px;
+    right: -35px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.07);
+}
+
+.trip-glow {
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    top: -60px;
+    right: -35px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.08);
+
+    filter: blur(2px);
+}
+
+.trip-top {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trip-icon-wrapper {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,.15);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    backdrop-filter: blur(10px);
+}
+
+.trip-icon {
+    font-size: 24px;
+}
+
+.trip-status-label {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    background: rgba(255,255,255,.14);
+
+    border: 1px solid rgba(255,255,255,.13);
+}
+
+.trip-content {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 17px;
+}
+
+.trip-card h2 {
+    font-size: 21px;
+    font-weight: 900;
+
+    color: #fff;
+
+    margin-bottom: 7px;
+}
+
+.trip-day {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.13);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.trip-message {
+    margin-top: 11px;
+
+    max-width: 90%;
+
+    font-size: 12px;
+    line-height: 1.8;
+
+    color: rgba(255,255,255,.88);
+}
+
+.trip-stars {
+    position: absolute;
+
+    left: 18px;
+    bottom: 14px;
+
+    font-size: 10px;
+
+    color: rgba(255,255,255,.55);
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   MESSAGE CARD
+   ========================================================= */
+
+.message-card {
+    position: relative;
+
+    padding: 19px;
+
+    border-radius: var(--radius);
+
+    background: rgba(255,255,255,.9);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 13px;
+}
+
+.message-header {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+}
+
+.message-icon {
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 15px;
+
+    background: var(--primary-soft);
+
+    font-size: 20px;
+}
+
+.message-header span {
+    display: block;
+
+    color: #b58c9d;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.message-header h3 {
+    margin-top: 2px;
+
+    color: var(--primary-dark);
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.message-divider {
+    height: 1px;
+
+    margin: 15px 0 13px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #efdbe3,
+        transparent
+    );
+}
+
+.message-card p {
+    color: #76636c;
+
+    font-size: 13px;
+    line-height: 2;
+
+    text-align: right;
+}
+
+.message-signature {
+    margin-top: 10px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   NOTIFICATION
+   ========================================================= */
+
+.notification-button {
+    width: 100%;
+
+    min-height: 52px;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border: 0;
+
+    border-radius: 18px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b55f82,
+            #984866
+        );
+
+    box-shadow:
+        0 12px 25px rgba(151, 68, 99, .18);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+.notification-button:active {
+    transform: scale(.98);
+
+    box-shadow:
+        0 7px 15px rgba(151, 68, 99, .15);
+}
+
+.notification-icon {
+    font-size: 17px;
+}
+
+.button-arrow {
+    position: absolute;
+
+    opacity: .6;
+
+    margin-right: 185px;
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.menu {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 11px;
+
+    margin-top: 25px;
+}
+
+.home-section-heading {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 2px 3px 5px;
+}
+
+.home-section-heading span {
+    color: #b28a9b;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.home-section-heading h2 {
+    margin-top: 3px;
+
+    color: var(--text);
+
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.heading-star {
+    width: 37px;
+    height: 37px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 13px;
+
+    color: #c985a2;
+
+    background: #f9eaf0;
 
     font-size: 16px;
 }
 
 
-/* ==========================================
-   TRIP CARD
-========================================== */
-
-.trip-card {
-
-    background: white;
-
-    border-radius: 28px;
-
-    padding: 30px 20px;
-
-    text-align: center;
-
-    box-shadow:
-        0 10px 30px
-        rgba(0, 0, 0, 0.07);
-
-    margin-bottom: 18px;
-}
-
-
-.trip-icon {
-
-    font-size: 48px;
-
-    margin-bottom: 10px;
-}
-
-
-.trip-card h2 {
-
-    font-size: 21px;
-
-    margin-bottom: 15px;
-}
-
-
-.trip-day {
-
-    font-size: 27px;
-
-    font-weight: bold;
-
-    margin-bottom: 12px;
-}
-
-
-.trip-message {
-
-    color: #8A6575;
-
-    line-height: 1.9;
-
-    font-size: 15px;
-}
-
-
-/* ==========================================
-   MESSAGE
-========================================== */
-
-.message-card {
-
-    background: #F8E6EE;
-
-    border-radius: 24px;
-
-    padding: 22px;
-
-    margin-bottom: 20px;
-}
-
-
-.section-title {
-
-    font-weight: bold;
-
-    font-size: 17px;
-
-    margin-bottom: 12px;
-}
-
-
-.message-card p {
-
-    line-height: 2;
-
-    font-size: 15px;
-}
-
-
-/* ==========================================
-   MENU
-========================================== */
-
-.menu {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 12px;
-}
-
+/* =========================================================
+   MENU BUTTONS
+   ========================================================= */
 
 .menu button {
+    position: relative;
 
-    border: none;
+    min-height: 92px;
 
-    background: white;
+    display: flex;
 
-    border-radius: 20px;
+    align-items: center;
 
-    padding: 20px 10px;
+    gap: 10px;
 
-    font-size: 27px;
+    padding: 13px;
+
+    border: 1px solid rgba(169,87,120,.07);
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,.88);
+
+    box-shadow:
+        0 9px 25px rgba(110,58,78,.065);
+
+    color: var(--text);
+
+    text-align: right;
 
     cursor: pointer;
 
-    box-shadow:
-        0 6px 18px
-        rgba(0, 0, 0, 0.05);
+    overflow: hidden;
 
     transition:
-        transform 0.2s,
-        box-shadow 0.2s;
+        transform .18s ease,
+        box-shadow .18s ease,
+        border-color .18s ease;
 }
 
+.menu button::after {
+    content: "";
 
-.menu button:active {
+    position: absolute;
 
-    transform: scale(0.96);
+    width: 70px;
+    height: 70px;
 
-}
-
-
-.menu button span {
-
-    display: block;
-
-    font-size: 15px;
-
-    margin-top: 8px;
-
-    color: #9E496D;
-}
-
-
-/* ==========================================
-   SECTIONS
-========================================== */
-
-.page-section {
-
-    margin-top: 10px;
-}
-
-
-.page-section h2 {
-
-    text-align: center;
-
-    font-size: 27px;
-
-    margin:
-        15px
-        0
-        8px;
-}
-
-
-.section-subtitle {
-
-    text-align: center;
-
-    color: #8A6575;
-
-    margin-bottom: 20px;
-}
-
-
-/* ==========================================
-   BACK BUTTON
-========================================== */
-
-.back-button {
-
-    border: none;
-
-    background: white;
-
-    padding:
-        12px
-        18px;
-
-    border-radius: 15px;
-
-    color: #9E496D;
-
-    cursor: pointer;
-
-    font-size: 14px;
-
-    box-shadow:
-        0 4px 12px
-        rgba(0, 0, 0, 0.05);
-}
-
-
-/* ==========================================
-   JOURNEY CARD
-========================================== */
-
-.journey-card {
-
-    background: white;
-
-    border-radius: 23px;
-
-    padding: 20px;
-
-    margin-bottom: 15px;
-
-    box-shadow:
-        0 6px 18px
-        rgba(0, 0, 0, 0.05);
-}
-
-
-.journey-header {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 14px;
-
-    margin-bottom: 15px;
-}
-
-
-.journey-icon {
-
-    width: 55px;
-
-    height: 55px;
-
-    border-radius: 18px;
-
-    background: #F8E6EE;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 28px;
-}
-
-
-.journey-header h3 {
-
-    font-size: 18px;
-
-    margin-bottom: 4px;
-}
-
-
-.journey-header small {
-
-    color: #9A7A88;
-
-    font-size: 13px;
-}
-
-
-.journey-card h4 {
-
-    font-size: 19px;
-
-    margin-bottom: 8px;
-}
-
-
-.journey-card p {
-
-    color: #8A6575;
-
-    line-height: 1.8;
-
-    margin-bottom: 12px;
-
-    font-size: 14px;
-}
-
-
-.journey-card ul {
-
-    list-style: none;
-}
-
-
-.journey-card li {
-
-    background: #FFF9FB;
-
-    padding: 10px 12px;
-
-    border-radius: 12px;
-
-    margin-bottom: 7px;
-
-    font-size: 14px;
-}
-
-
-/* ==========================================
-   FOOTER
-========================================== */
-
-footer {
-
-    text-align: center;
-
-    margin-top: 30px;
-
-    color: #9A7A88;
-
-    font-size: 13px;
-}
-
-
-/* ==========================================
-   HIDDEN
-========================================== */
-
-.hidden {
-
-    display: none !important;
-}
-/* ==========================================
-   ðŸ•‹ Ø¹Ù…Ø±ØªÙŠ
-========================================== */
-
-.umrah-header {
-    text-align: center;
-    margin: 25px 0;
-}
-
-.umrah-icon {
-    font-size: 55px;
-    margin-bottom: 10px;
-}
-
-.umrah-header h2 {
-    font-size: 28px;
-}
-
-.umrah-header p {
-    color: #8A6575;
-    margin-top: 8px;
-}
-
-
-.umrah-progress {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.progress-item {
-    text-align: center;
-}
-
-.progress-item span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 34px;
-    height: 34px;
+    left: -28px;
+    bottom: -35px;
 
     border-radius: 50%;
 
-    background: #F0DCE5;
+    background: rgba(247,225,234,.45);
 }
 
-.progress-item.active span {
-    background: #9E496D;
-    color: white;
+.menu button:active {
+    transform: scale(.97);
+
+    box-shadow:
+        0 5px 14px rgba(110,58,78,.08);
 }
 
-.progress-item small {
+.menu-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 47px;
+    height: 47px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 16px;
+
+    font-size: 21px;
+}
+
+.umrah-icon {
+    background: #f5e7ec;
+}
+
+.dua-icon {
+    background: #f9efe0;
+}
+
+.journey-icon {
+    background: #e9f1ed;
+}
+
+.rating-icon {
+    background: #f7efdb;
+}
+
+.message-menu-icon {
+    background: #f5e5ed;
+}
+
+.menu-text {
+    position: relative;
+    z-index: 2;
+
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.menu-text strong {
+    color: #55434b;
+
+    font-size: 14px;
+
+    font-weight: 900;
+}
+
+.menu-text span {
+    color: #9a8990;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.menu-arrow {
+    position: relative;
+    z-index: 2;
+
+    color: #c394a7;
+
+    font-size: 15px;
+
+    opacity: .75;
+}
+
+.menu-wide {
+    grid-column: 1 / -1;
+
+    min-height: 78px !important;
+}
+
+
+/* =========================================================
+   HOME NOTE
+   ========================================================= */
+
+.home-note {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-top: 4px;
+
+    padding: 14px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.88),
+            rgba(250,237,243,.72)
+        );
+
+    border: 1px solid rgba(169,87,120,.06);
+}
+
+.home-note-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 13px;
+
+    background: white;
+
+    box-shadow: 0 5px 14px rgba(110,58,78,.06);
+}
+
+.home-note strong {
     display: block;
-    margin-top: 5px;
+
+    color: #735665;
+
+    font-size: 11px;
+}
+
+.home-note p {
+    margin-top: 3px;
+
+    color: #a18f96;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   PAGE SECTIONS
+   ========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+.page-section {
+    animation: pageEnter .3s ease both;
+
+    padding-top: 5px;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-section h2 {
+    margin-top: 22px;
+
+    color: var(--primary-dark);
+
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.section-subtitle {
+    margin-top: 6px;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 43px;
+
+    padding: 0 15px;
+
+    border: 0;
+
+    border-radius: 15px;
+
+    color: var(--primary-dark);
+
+    background: #f7e8ee;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.back-button:active {
+    transform: scale(.97);
+}
+
+
+/* =========================================================
+   JOURNEY
+   ========================================================= */
+
+.journey-card {
+    position: relative;
+
+    padding: 16px;
+
+    margin-top: 12px;
+
+    border-radius: 21px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    box-shadow: 0 9px 25px rgba(110,58,78,.06);
+}
+
+.journey-header {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+}
+
+.journey-icon {
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 14px;
+
+    background: #f6e7ed;
+}
+
+.journey-status {
+    margin-right: auto;
+
+    padding: 5px 9px;
+
+    border-radius: 10px;
+
+    color: #9b637b;
+
+    background: #faedf2;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   UMRAH
+   ========================================================= */
+
+.umrah-header {
+    padding: 18px;
+
+    border-radius: 24px;
+
+    background: white;
+
+    box-shadow: var(--shadow);
+
+    margin-top: 15px;
+}
+
+.umrah-icon {
+    font-size: 30px;
+}
+
+.umrah-progress {
+    display: flex;
+
+    align-items: center;
+
+    margin: 20px 0;
+}
+
+.progress-item {
+    flex: 1;
+
+    text-align: center;
+
+    color: #a88b97;
+
     font-size: 10px;
 }
 
 .progress-line {
-    width: 25px;
     height: 2px;
-    background: #E7CDD8;
-}
 
+    flex: 1;
+
+    background: #ead9e1;
+}
 
 .umrah-step-card {
+    padding: 19px;
+
+    margin-top: 13px;
+
+    border-radius: 23px;
+
     background: white;
-    border-radius: 25px;
-    padding: 22px;
-    box-shadow: 0 7px 20px rgba(0,0,0,0.05);
+
+    border: 1px solid var(--border);
+
+    box-shadow: 0 9px 27px rgba(110,58,78,.06);
 }
 
-.step-number {
-    color: #8A6575;
-    font-size: 13px;
-    margin-bottom: 8px;
-}
-
-
-.info-box {
-    background: #FFF9FB;
-    border-radius: 18px;
-    padding: 17px;
-    margin: 15px 0;
-}
-
-.info-box h4 {
-    margin-bottom: 10px;
-}
-
-.info-box p {
-    line-height: 1.9;
-    font-size: 14px;
-}
-
-.info-box ul {
-    padding-right: 20px;
-}
-
-.info-box li {
-    margin-bottom: 8px;
-    line-height: 1.7;
-}
-
-
+.info-box,
 .talbiyah,
-.dua {
-    background: white;
-    border-radius: 15px;
-    padding: 15px;
-    line-height: 2.2;
-    text-align: center;
-    margin-top: 10px;
-    font-size: 16px;
-}
-
-.note {
-    color: #8A6575;
-    margin-top: 10px;
-}
-
+.dua,
+.note,
 .important {
-    font-weight: bold;
-}
+    margin-top: 12px;
 
+    padding: 14px;
 
-.primary-button {
-    width: 100%;
-    border: none;
-    border-radius: 18px;
-    padding: 17px;
-    background: #9E496D;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-
-.tawaf-counter {
-    background: white;
-    border-radius: 25px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 7px 20px rgba(0,0,0,0.05);
-}
-
-.counter-title {
-    color: #8A6575;
-}
-
-.counter-number {
-    font-size: 70px;
-    font-weight: bold;
-    margin: 10px;
-}
-
-.counter-total {
-    color: #9A7A88;
-}
-
-.tawaf-dots {
-    text-align: center;
-    font-size: 22px;
-    letter-spacing: 5px;
-    margin: 18px 0;
-}
-
-
-.completion-card {
-    background: white;
-    border-radius: 28px;
-    padding: 35px 22px;
-    text-align: center;
-    margin-top: 30px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-}
-
-.completion-icon {
-    font-size: 60px;
-    margin-bottom: 15px;
-}
-
-.completion-card h2 {
-    margin-bottom: 15px;
-}
-
-.completion-card p {
-    line-height: 2;
-    color: #8A6575;
-    margin-bottom: 12px;
-}
-
-.special-message {
-    background: #F8E6EE;
-    padding: 15px;
-    border-radius: 18px;
-    color: #9E496D !important;
-}
-
-
-.sai-route {
-    background: white;
-    border-radius: 25px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 7px 20px rgba(0,0,0,0.05);
-}
-
-.sai-point {
-    font-size: 20px;
-    margin: 15px;
-}
-
-.sai-point span {
-    margin-right: 8px;
-}
-
-.sai-arrow {
-    font-size: 30px;
-}
-
-/* ==========================================
-   ðŸ“… ØªØ·ÙˆÙŠØ± ØµÙØ­Ø© Ø±Ø­Ù„ØªÙŠ
-========================================== */
-
-.journey-card {
-    position: relative;
-    overflow: hidden;
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        opacity 0.25s ease;
-}
-
-
-/* ==========================================
-   ðŸ“ Ø§Ù„ÙŠÙˆÙ… Ø§Ù„Ø­Ø§Ù„ÙŠ
-========================================== */
-
-.journey-card.today {
-    border: 2px solid #9E496D;
-
-    box-shadow:
-        0 10px 28px rgba(38, 59, 45, 0.15);
-
-    transform: scale(1.02);
-}
-
-.journey-card.today::before {
-
-    content: "ÙŠÙˆÙ…Ùƒ Ø§Ù„Ø¢Ù† ðŸ¤";
-
-    display: block;
-
-    background: #9E496D;
-
-    color: white;
-
-    text-align: center;
-
-    padding: 7px;
-
-    margin:
-        -20px
-        -20px
-        15px;
-
-    font-size: 13px;
-
-    font-weight: bold;
-}
-
-
-/* ==========================================
-   ðŸ”’ Ø§Ù„Ø£ÙŠØ§Ù… Ø§Ù„Ù‚Ø§Ø¯Ù…Ø©
-========================================== */
-
-.journey-card.upcoming {
-
-    opacity: 0.72;
-
-}
-
-.journey-card.upcoming .journey-icon {
-
-    background: #F5E9EE;
-
-}
-
-.journey-card.upcoming h4 {
-
-    color: #8A6575;
-
-}
-
-
-/* ==========================================
-   âœ… Ø§Ù„Ø£ÙŠØ§Ù… Ø§Ù„Ù…ÙƒØªÙ…Ù„Ø©
-========================================== */
-
-.journey-card.completed {
-
-    opacity: 0.85;
-
-}
-
-.journey-card.completed .journey-icon {
-
-    background: #F8E6EE;
-
-}
-
-.journey-card.completed .journey-status {
-
-    color: #9E496D;
-
-}
-
-
-/* ==========================================
-   ðŸ·ï¸ Ø­Ø§Ù„Ø© Ø§Ù„ÙŠÙˆÙ…
-========================================== */
-
-.journey-status {
-
-    display: inline-block;
-
-    padding:
-        6px
-        11px;
-
-    border-radius: 20px;
-
-    background: #FFF9FB;
-
-    color: #8A6575;
+    border-radius: 17px;
 
     font-size: 12px;
 
-    margin-bottom: 12px;
+    line-height: 1.9;
+}
+
+.info-box {
+    background: #f4f8f6;
+}
+
+.talbiyah {
+    background: #f8edf2;
+}
+
+.dua {
+    background: #fbf5e8;
+}
+
+.note {
+    background: #f3f5f8;
+}
+
+.important {
+    background: #fff0f0;
 }
 
 
-/* ==========================================
-   ðŸ“± ØªØ­Ø³ÙŠÙ† Ø§Ù„Ù…ÙˆØ¨Ø§ÙŠÙ„
-========================================== */
+/* =========================================================
+   TAWAF / SAI
+   ========================================================= */
 
-@media (max-width: 380px) {
+.tawaf-counter {
+    margin-top: 16px;
 
-    .app {
+    padding: 25px;
 
-        padding:
-            20px
-            14px
-            25px;
+    text-align: center;
 
-    }
+    border-radius: 25px;
 
-    .journey-card {
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #faedf2
+        );
 
-        padding: 17px;
-
-    }
-
-    .journey-card.today::before {
-
-        margin:
-            -17px
-            -17px
-            13px;
-
-    }
-
+    box-shadow: var(--shadow);
 }
 
-/* =========================================
-   ðŸ—ºï¸ Ø®Ø±ÙŠØ·Ø© Ø£ÙŠÙˆØ´ØªÙŠ
-========================================= */
+.counter-title {
+    color: var(--text-soft);
 
-.map-tabs {
+    font-size: 12px;
+}
+
+.counter-number {
+    margin: 8px 0;
+
+    color: var(--primary-dark);
+
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.counter-total {
+    color: #a9909b;
+
+    font-size: 11px;
+}
+
+.tawaf-dots {
     display: flex;
-    gap: 10px;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 17px;
+}
+
+.tawaf-dots span {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #e7d4dd;
+}
+
+.tawaf-dots span.active {
+    background: var(--primary);
+}
+
+.completion-card {
+    margin-top: 18px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background: white;
+
+    box-shadow: var(--shadow);
+}
+
+.completion-icon {
+    font-size: 38px;
+}
+
+.special-message {
+    margin-top: 12px;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+}
+
+.sai-route {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
     margin: 20px 0;
 }
 
-.map-tab {
-    flex: 1;
-    border: none;
-    padding: 14px 10px;
-    border-radius: 16px;
-    background: #f3f3f3;
-    color: #555;
-    font-size: 15px;
+.sai-point {
+    padding: 11px 14px;
+
+    border-radius: 14px;
+
+    background: #f7e8ee;
+
+    color: var(--primary-dark);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.sai-arrow {
+    color: #b993a3;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    padding: 28px 0 8px;
+
+    text-align: center;
+
+    color: #b29ba5;
+
+    font-size: 10px;
+}
+
+footer strong {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    .app {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .trip-card {
+        min-height: 175px;
+
+        padding: 17px;
+    }
+
+    .trip-card h2 {
+        font-size: 19px;
+    }
+
+    .menu {
+        gap: 9px;
+    }
+
+    .menu button {
+        min-height: 88px;
+
+        padding: 11px;
+
+        border-radius: 19px;
+    }
+
+    .menu-icon {
+        width: 43px;
+        height: 43px;
+
+        border-radius: 14px;
+    }
+
+    .menu-text strong {
+        font-size: 13px;
+    }
+
+    .menu-text span {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+/* =========================
+   ?? SETTINGS BUTTON
+   ========================= */
+
+.header {
+    position: relative;
+}
+
+.header-actions {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    z-index: 10;
+}
+
+.header-settings {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(169, 87, 120, .10);
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, .88);
+
+    color: #8d3f60;
+    font-size: 19px;
+
+    box-shadow:
+        0 8px 22px rgba(110, 58, 78, .10);
+
+    backdrop-filter: blur(10px);
+
     cursor: pointer;
-    transition: 0.2s;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
 }
 
-.map-tab.active {
-    background: #F8E6EE;
-    color: #9E496D;
-    font-weight: bold;
+.header-settings:active {
+    transform: scale(.91) rotate(8deg);
+
+    box-shadow:
+        0 4px 12px rgba(110, 58, 78, .08);
 }
 
-.map-view {
-    width: 100%;
-}
 
-.map-card,
-.haram-map-card {
-    background: #fff;
+/* =========================================================
+   ⚙️ AYOUSHTI SETTINGS
+   ========================================================= */
+
+.settings-card {
+    margin-top: 13px;
+    padding: 17px;
     border-radius: 22px;
-    padding: 18px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    margin-bottom: 15px;
+
+    background: rgba(255, 255, 255, .90);
+
+    border: 1px solid rgba(169, 87, 120, .08);
+
+    box-shadow:
+        0 10px 28px rgba(110, 58, 78, .065);
 }
 
-.map-location {
+.settings-title {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px;
-    border-radius: 16px;
+}
+
+.settings-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 15px;
+
+    background: #f7e8ee;
+
+    font-size: 20px;
+}
+
+.settings-title strong {
+    display: block;
+
+    color: #5b4650;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.settings-title span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #9b8991;
+
+    font-size: 10px;
+}
+
+.settings-button,
+.settings-danger {
+    width: 100%;
+
+    min-height: 46px;
+
+    margin-top: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 14px;
+
+    border: 0;
+    border-radius: 15px;
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+.settings-button {
+    color: #8d3f60;
+    background: #f8eaf0;
+}
+
+.settings-danger {
+    color: #a65b67;
+    background: #fff0f1;
+}
+
+.settings-button:active,
+.settings-danger:active {
+    transform: scale(.97);
+}
+
+.settings-option {
+    min-height: 45px;
+
+    margin-top: 13px;
+
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 15px;
+
+    color: #7c6871;
+    background: #faf5f7;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.settings-option.active {
+    color: #8d3f60;
+
+    background: #f8e8ef;
+
+    border: 1px solid rgba(169, 87, 120, .08);
+}
+
+.font-options {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 7px;
+
+    margin-top: 13px;
+}
+
+.font-options button {
+    min-height: 42px;
+
+    border: 1px solid rgba(169, 87, 120, .07);
+
+    border-radius: 13px;
+
+    background: #faf7f8;
+
+    color: #8e7c84;
+
+    font-family: inherit;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform .18s ease,
+        background .18s ease;
+}
+
+.font-options button:active {
+    transform: scale(.95);
+}
+
+.font-options button.active {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b55f82,
+            #984866
+        );
+
+    border-color: transparent;
+}
+
+.settings-about {
+    margin-top: 14px;
+
+    color: #76636c;
+
+    font-size: 11px;
+
+    line-height: 2;
+
+    text-align: right;
+}
+
+.settings-signature {
+    margin-top: 11px;
+
+    color: #b06b87;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-align: left;
+}
+
+/* =========================================================
+   🔤 FONT SIZE SETTINGS
+   ========================================================= */
+
+html.font-small .app {
+    zoom: 0.94;
+}
+
+html.font-normal .app {
+    zoom: 1;
+}
+
+html.font-large .app {
+    zoom: 1.08;
+}
+
+/* =========================================================
+   🌙 THEME OPTIONS
+   ========================================================= */
+
+.theme-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.theme-options .settings-option {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(169, 87, 120, .10);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .72);
+    color: #6f4053;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.theme-options .settings-option span {
+    opacity: 0;
+}
+
+.theme-options .settings-option.active {
+    border-color: rgba(169, 87, 120, .28);
+    background: rgba(169, 87, 120, .08);
+}
+
+.theme-options .settings-option.active span {
+    opacity: 1;
+}
+
+.theme-options .settings-option:active {
+    transform: scale(.98);
+}
+
+
+/* =========================================================
+   🌙 NIGHT THEME
+   ========================================================= */
+
+html.theme-night body {
+    background: #17131a;
+}
+
+html.theme-night .app {
+    background: #17131a;
+    color: #f4eaf0;
+}
+
+html.theme-night .settings-card,
+html.theme-night .message-card,
+html.theme-night .trip-card {
+    background: #241d27;
+    color: #f4eaf0;
+}
+
+html.theme-night .theme-options .settings-option {
+    background: #2c2330;
+    color: #f4eaf0;
+    border-color: rgba(255,255,255,.08);
+}
+
+html.theme-night .settings-title span,
+html.theme-night .settings-about {
+    color: #cbbbc5;
+}
+
+
+/* =========================================================
+   ☀️ LIGHT THEME
+   ========================================================= */
+
+html.theme-light body {
+    background: #ffffff;
+}
+
+html.theme-light .app {
+    background: #ffffff;
+}
+
+html.theme-light .theme-options .settings-option {
     background: #fafafa;
 }
 
-.map-location-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+
+/* =========================================================
+   🌸 CALM THEME
+   ========================================================= */
+
+html.theme-calm body {
+    background: #fff8fb;
+}
+
+/* =========================================================
+   🌸 CALM THEME — WARM
+   ========================================================= */
+
+html.theme-calm body {
+    background: #fff4f8;
+}
+
+html.theme-calm .app {
+    background: #fff4f8;
+}
+
+html.theme-calm .trip-card,
+html.theme-calm .message-card,
+html.theme-calm .settings-card {
+    background: #fffafc;
+    border-color: rgba(169, 87, 120, .10);
+}
+
+
+/* =========================================================
+   ☀️ LIGHT THEME — CLEAN WHITE
+   ========================================================= */
+
+html.theme-light body {
+    background: #ffffff;
+}
+
+html.theme-light .app {
+    background: #ffffff;
+}
+
+html.theme-light .trip-card,
+html.theme-light .message-card,
+html.theme-light .settings-card {
+    background: #ffffff;
+    border-color: rgba(80, 80, 80, .08);
+    box-shadow: 0 6px 22px rgba(0,0,0,.06);
+}
+
+html.theme-light .theme-options .settings-option {
+    background: #f7f7f7;
+    color: #333333;
+}
+
+html.theme-light .settings-title span,
+html.theme-light .settings-about {
+    color: #777777;
+}
+
+
+/* =========================================================
+   🌙 NIGHT THEME
+   ========================================================= */
+
+html.theme-night body {
+    background: #141116;
+}
+
+html.theme-night .app {
+    background: #141116;
+    color: #f8edf3;
+}
+
+html.theme-night .trip-card,
+html.theme-night .message-card,
+html.theme-night .settings-card {
+    background: #211b23;
+    color: #f8edf3;
+    border-color: rgba(255,255,255,.07);
+    box-shadow: 0 8px 28px rgba(0,0,0,.25);
+}
+
+html.theme-night .theme-options .settings-option {
+    background: #2a222d;
+    color: #f8edf3;
+    border-color: rgba(255,255,255,.08);
+}
+
+html.theme-night .settings-title span,
+html.theme-night .settings-about {
+    color: #cdbfc8;
+}
+
+/* =========================================================
+   ☀️ LIGHT THEME — TEXT & CARDS FIX
+   ========================================================= */
+
+html.theme-light body,
+html.theme-light .app {
+    color: #4f3b43;
+}
+
+html.theme-light h1,
+html.theme-light h2,
+html.theme-light h3,
+html.theme-light strong {
+    color: #5f3b4b;
+}
+
+html.theme-light p,
+html.theme-light span,
+html.theme-light .section-subtitle,
+html.theme-light .settings-title span,
+html.theme-light .settings-about {
+    color: #6f6066;
+}
+
+html.theme-light .trip-card,
+html.theme-light .message-card,
+html.theme-light .settings-card {
+    background: #ffffff;
+    color: #4f3b43;
+    border: 1px solid rgba(95, 59, 75, .12);
+    box-shadow: 0 8px 24px rgba(70, 45, 55, .08);
+}
+
+html.theme-light .theme-options .settings-option,
+html.theme-light .font-options button {
+    background: #f7f3f5;
+    color: #5f3b4b;
+    border-color: rgba(95, 59, 75, .12);
+}
+
+html.theme-light .theme-options .settings-option.active,
+html.theme-light .font-options button.active {
+    background: #f0e2e8;
+    color: #8d3f60;
+    border-color: rgba(141, 63, 96, .25);
+}
+
+html.theme-light .header-settings {
+    background: #ffffff;
+    color: #8d3f60;
+    border-color: rgba(141, 63, 96, .12);
+}
+
+/* =========================================================
+   🌸 CALM THEME — TEXT & CARDS FIX
+   ========================================================= */
+
+html.theme-calm body,
+html.theme-calm .app {
+    color: #553b46;
+}
+
+html.theme-calm h1,
+html.theme-calm h2,
+html.theme-calm h3,
+html.theme-calm strong {
+    color: #713f55;
+}
+
+html.theme-calm p,
+html.theme-calm span,
+html.theme-calm .section-subtitle,
+html.theme-calm .settings-title span,
+html.theme-calm .settings-about {
+    color: #765e69;
+}
+
+html.theme-calm .trip-card,
+html.theme-calm .message-card,
+html.theme-calm .settings-card {
+    background: #fffafd;
+    color: #553b46;
+    border: 1px solid rgba(169, 87, 120, .14);
+    box-shadow: 0 8px 24px rgba(120, 65, 88, .09);
+}
+
+html.theme-calm .theme-options .settings-option,
+html.theme-calm .font-options button {
+    background: #fff4f8;
+    color: #713f55;
+    border-color: rgba(169, 87, 120, .14);
+}
+
+html.theme-calm .theme-options .settings-option.active,
+html.theme-calm .font-options button.active {
+    background: #f8e4ec;
+    color: #8d3f60;
+    border-color: rgba(141, 63, 96, .25);
+}
+
+html.theme-calm .header-settings {
+    background: #fffafd;
+    color: #8d3f60;
+    border-color: rgba(141, 63, 96, .12);
+}
+
+/* =========================================================
+   🌸☀️ FINAL DIFFERENCE BETWEEN CALM & LIGHT
+   ========================================================= */
+
+/* 🌸 CALM — WARM PINK */
+html.theme-calm .trip-card,
+html.theme-calm .message-card,
+html.theme-calm .settings-card {
+    background: #fff1f6;
+    border-color: #f1ccd9;
+}
+
+html.theme-calm .theme-options .settings-option,
+html.theme-calm .font-options button {
+    background: #fde7ef;
+    border-color: #efc7d6;
+}
+
+
+/* ☀️ LIGHT — CLEAN NEUTRAL */
+html.theme-light .trip-card,
+html.theme-light .message-card,
+html.theme-light .settings-card {
+    background: #f5f6f7;
+    border-color: #dfe2e5;
+}
+
+html.theme-light .theme-options .settings-option,
+html.theme-light .font-options button {
+    background: #ffffff;
+    border-color: #d9dde1;
+}
+
+html.theme-light .theme-options .settings-option.active,
+html.theme-light .font-options button.active {
+    background: #e9edf0;
+}
+
+
+/* Make calm buttons visibly warmer */
+html.theme-calm .theme-options .settings-option.active,
+html.theme-calm .font-options button.active {
+    background: #f4d5e1;
+}
+
+
+/* =========================================================
+   ✨ CARD DEPTH
+   ========================================================= */
+
+html.theme-calm .trip-card,
+html.theme-calm .message-card,
+html.theme-calm .settings-card {
+    box-shadow: 0 8px 25px rgba(169, 87, 120, .10);
+}
+
+html.theme-light .trip-card,
+html.theme-light .message-card,
+html.theme-light .settings-card {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .055);
+}
+
+/* =========================================================
+   📅 JOURNEY — PREMIUM 14 DAYS
+   ========================================================= */
+
+.journey-days {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 23px;
-    background: #FBEAF1;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 22px;
+    padding-bottom: 30px;
 }
 
-.map-location strong {
-    display: block;
-    margin-bottom: 4px;
-}
-
-.map-location small {
-    color: #777;
-}
-
-.map-route {
+.journey-day-card {
     position: relative;
-    padding: 20px 0 20px 0;
-}
-
-.route-line {
-    width: 4px;
-    height: 55px;
-    background: #C86B91;
-    margin: auto;
-    border-radius: 10px;
-}
-
-.route-info {
-    text-align: center;
-    margin-top: 8px;
-    color: #9E496D;
-    font-size: 14px;
-}
-
-
-/* =========================================
-   ðŸ•‹ Ø®Ø±ÙŠØ·Ø© Ø§Ù„Ø­Ø±Ù… Offline
-========================================= */
-
-.haram-map {
-    position: relative;
-    width: 100%;
-    height: 430px;
-    margin-top: 15px;
-    border-radius: 20px;
-    background:
-        linear-gradient(90deg,
-            transparent 49%,
-            rgba(120,120,120,0.08) 50%,
-            transparent 51%),
-        linear-gradient(
-            transparent 49%,
-            rgba(120,120,120,0.08) 50%,
-            transparent 51%);
-    background-size: 50px 50px;
+    padding: 20px;
+    border-radius: 24px;
+    background: rgba(255, 250, 252, .96);
+    border: 1px solid rgba(169, 87, 120, .12);
+    box-shadow: 0 8px 24px rgba(110, 58, 78, .08);
     overflow: hidden;
 }
 
-.kaaba {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: #eee;
+.journey-day-header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    box-shadow: 0 0 0 10px rgba(150,150,150,0.08);
+    gap: 14px;
+    margin-bottom: 14px;
 }
 
-.kaaba span,
-.mataf span,
-.masaa span,
-.safa span,
-.marwa span,
-.gate span {
+.journey-day-icon {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 17px;
+    background: #f8e4ec;
+    font-size: 25px;
+}
+
+.journey-day-info {
+    min-width: 0;
+}
+
+.journey-day-number {
     display: block;
-    font-size: 11px;
+    margin-bottom: 3px;
+    color: #a15b78;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.journey-day-info h3 {
+    margin: 0;
+    color: #713f55;
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+.journey-date {
+    display: block;
     margin-top: 3px;
+    color: #8c747e;
+    font-size: 12px;
 }
 
-.mataf {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 170px;
-    height: 170px;
-    border: 3px dashed #C86B91;
-    border-radius: 50%;
+.journey-description {
+    margin: 0 0 17px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(248, 228, 236, .45);
+    color: #765e69;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.journey-progress {
+    margin-bottom: 17px;
+}
+
+.journey-progress-top {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 8px;
-    color: #9E496D;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    color: #765e69;
+    font-size: 12px;
 }
 
-.masaa {
-    position: absolute;
-    right: 8%;
-    top: 38%;
-    width: 70px;
-    height: 150px;
-    border-radius: 35px;
-    background: rgba(100,170,120,0.12);
+.journey-progress-top strong {
+    color: #8d3f60;
+}
+
+.journey-progress-bar {
+    width: 100%;
+    height: 8px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #f2e5ea;
+}
+
+.journey-progress-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: #b96888;
+    transition: width .35s ease;
+}
+
+.journey-tasks {
     display: flex;
     flex-direction: column;
+    gap: 9px;
+}
+
+.journey-task {
+    width: 100%;
+    min-height: 48px;
+    padding: 9px 11px;
+    display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 11px;
+    border: 1px solid rgba(169, 87, 120, .10);
+    border-radius: 15px;
+    background: #fff;
+    color: #5f4853;
+    font-family: inherit;
+    font-size: 13px;
+    text-align: right;
+    cursor: pointer;
+    transition: .2s ease;
 }
 
-.safa {
-    position: absolute;
-    right: 8%;
-    top: 25%;
-    font-size: 22px;
+.task-check {
+    width: 27px;
+    height: 27px;
+    flex: 0 0 27px;
+    display: grid;
+    place-items: center;
+    border: 2px solid #dfc4cf;
+    border-radius: 9px;
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
 }
 
-.marwa {
-    position: absolute;
-    right: 8%;
-    bottom: 18%;
-    font-size: 22px;
+.task-text {
+    flex: 1;
+    line-height: 1.6;
 }
 
-.gate {
-    position: absolute;
-    font-size: 18px;
+.journey-task.completed {
+    background: #f8e8ef;
+    border-color: #e7c2d0;
+}
+
+.journey-task.completed .task-check {
+    border-color: #a95778;
+    background: #a95778;
+}
+
+.journey-task.completed .task-text {
+    color: #8b6676;
+    text-decoration: line-through;
+}
+
+.journey-task:active {
+    transform: scale(.985);
+}
+
+
+/* =========================================================
+   ☀️ LIGHT JOURNEY
+   ========================================================= */
+
+html.theme-light .journey-day-card {
+    background: #f7f8f9;
+    border-color: #dfe2e5;
+    box-shadow: 0 7px 20px rgba(0,0,0,.05);
+}
+
+html.theme-light .journey-day-icon {
+    background: #e9edf0;
+}
+
+html.theme-light .journey-description {
+    background: #eceff1;
+}
+
+html.theme-light .journey-task {
+    background: #fff;
+    border-color: #dfe2e5;
+    color: #4f4f4f;
+}
+
+
+/* =========================================================
+   🌙 NIGHT JOURNEY
+   ========================================================= */
+
+html.theme-night .journey-day-card {
+    background: #211b23;
+    border-color: rgba(255,255,255,.07);
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+
+html.theme-night .journey-day-icon {
+    background: #302430;
+}
+
+html.theme-night .journey-day-info h3 {
+    color: #f5e8ef;
+}
+
+html.theme-night .journey-date,
+html.theme-night .journey-description,
+html.theme-night .journey-progress-top {
+    color: #cdbfc8;
+}
+
+html.theme-night .journey-description {
+    background: #2a222d;
+}
+
+html.theme-night .journey-progress-bar {
+    background: #352b37;
+}
+
+html.theme-night .journey-task {
+    background: #2a222d;
+    border-color: rgba(255,255,255,.07);
+    color: #eee2e9;
+}
+
+html.theme-night .journey-task.completed {
+    background: #382733;
+}
+
+/* ================= JOURNEY RATING ================= */
+
+.journey-rating {
+    margin-top: 22px;
+    padding: 18px;
+    border-radius: 20px;
+    background: #fff7fa;
+    border: 1px solid rgba(169, 87, 120, .12);
+}
+
+.journey-rating-title {
+    margin-bottom: 14px;
+    color: #713f55;
+    font-size: 15px;
+    font-weight: 700;
     text-align: center;
 }
 
-.gate-1 {
-    bottom: 8%;
-    left: 10%;
-}
-
-.gate-2 {
-    top: 8%;
-    left: 12%;
-}
-
-.gate-3 {
-    top: 8%;
-    right: 12%;
-}
-
-.gate-4 {
-    bottom: 8%;
-    right: 12%;
-}
-
-.offline-note {
-    display: flex;
+.journey-rating-options {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 8px;
-    align-items: flex-start;
-    margin-top: 15px;
-    padding: 12px;
-    border-radius: 14px;
-    background: #FFF9FB;
-    color: #666;
+}
+
+.journey-rating-button {
+    position: relative;
+    z-index: 10;
+    min-height: 72px;
+    padding: 8px 4px;
+    border: 1px solid #ead5de;
+    border-radius: 15px;
+    background: #ffffff;
+    color: #713f55;
+    font-family: inherit;
+    cursor: pointer;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.journey-rating-button span {
+    display: block;
+    font-size: 25px;
+    line-height: 1.2;
+    pointer-events: none;
+}
+
+.journey-rating-button small {
+    display: block;
+    margin-top: 5px;
+    font-size: 10px;
+    color: #8c747e;
+    pointer-events: none;
+}
+
+.journey-rating-button:active {
+    transform: scale(.92);
+}
+
+.journey-rating-button.active {
+    background: #f4d5e1;
+    border-color: #b96888;
+    box-shadow: 0 5px 14px rgba(169, 87, 120, .15);
+}
+
+.journey-rating-button.active small {
+    color: #713f55;
+    font-weight: 700;
+}
+
+/* 🌙 الوضع الليلي */
+html.theme-night .journey-rating {
+    background: #211b23;
+    border-color: rgba(255,255,255,.07);
+}
+
+html.theme-night .journey-rating-title {
+    color: #f5e8ef;
+}
+
+html.theme-night .journey-rating-button {
+    background: #2a222d;
+    border-color: rgba(255,255,255,.08);
+    color: #eee2e9;
+}
+
+html.theme-night .journey-rating-button small {
+    color: #cdbfc8;
+}
+
+html.theme-night .journey-rating-button.active {
+    background: #49313f;
+    border-color: #b96888;
+}
+
+/* ☀️ الوضع الفاتح */
+html.theme-light .journey-rating {
+    background: #f7f8f9;
+    border-color: #dfe2e5;
+}
+
+html.theme-light .journey-rating-title {
+    color: #4f4f4f;
+}
+
+html.theme-light .journey-rating-button {
+    background: #ffffff;
+    border-color: #dfe2e5;
+    color: #4f4f4f;
+}
+
+html.theme-light .journey-rating-button.active {
+    background: #e9edf0;
+    border-color: #8d969d;
+}
+
+/* 📱 الموبايل */
+@media (max-width: 480px) {
+    .journey-rating-options {
+        gap: 6px;
+    }
+
+    .journey-rating-button {
+        min-height: 68px;
+    }
+
+    .journey-rating-button span {
+        font-size: 23px;
+    }
+
+    .journey-rating-button small {
+        font-size: 9px;
+    }
+}
+
+/* ================= OVERALL JOURNEY RATING ================= */
+
+.journey-overall-rating {
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 22px;
+    background: #fff1f6;
+    border: 1px solid #f1ccd9;
+    box-shadow: 0 8px 25px rgba(169, 87, 120, .10);
+}
+
+.journey-overall-title {
+    margin-bottom: 14px;
+    color: #713f55;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.journey-overall-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.journey-overall-score {
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+    background: #f4d5e1;
+    color: #8d3f60;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.journey-overall-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.journey-overall-info strong {
+    color: #713f55;
+    font-size: 14px;
+}
+
+.journey-overall-info span {
+    color: #8c747e;
+    font-size: 11px;
+}
+
+/* 🌙 الوضع الليلي */
+
+html.theme-night .journey-overall-rating {
+    background: #211b23;
+    border-color: rgba(255,255,255,.07);
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+
+html.theme-night .journey-overall-title,
+html.theme-night .journey-overall-info strong {
+    color: #f5e8ef;
+}
+
+html.theme-night .journey-overall-info span {
+    color: #cdbfc8;
+}
+
+html.theme-night .journey-overall-score {
+    background: #49313f;
+    color: #f5dce7;
+}
+
+/* ☀️ الوضع الفاتح */
+
+html.theme-light .journey-overall-rating {
+    background: #f7f8f9;
+    border-color: #dfe2e5;
+    box-shadow: 0 6px 20px rgba(0,0,0,.055);
+}
+
+html.theme-light .journey-overall-title,
+html.theme-light .journey-overall-info strong {
+    color: #4f4f4f;
+}
+
+html.theme-light .journey-overall-info span {
+    color: #777;
+}
+
+html.theme-light .journey-overall-score {
+    background: #e9edf0;
+    color: #59636a;
+}
+
+/* ================= MEMORIES GALLERY ================= */
+
+.memories-intro {
+    text-align: center;
+    padding: 22px 18px;
+    margin: 16px 0 20px;
+    border-radius: 24px;
+    background: var(--card-bg, rgba(255,255,255,.75));
+    border: 1px solid rgba(255,255,255,.55);
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+.memories-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: 32px;
+    background: rgba(255,255,255,.65);
+}
+
+.memories-intro h3 {
+    margin: 0 0 8px;
+    font-size: 21px;
+}
+
+.memories-intro p {
+    margin: 0;
+    line-height: 1.8;
+    opacity: .78;
+}
+
+.memories-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.memory-card {
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--card-bg, rgba(255,255,255,.8));
+    border: 1px solid rgba(255,255,255,.55);
+    box-shadow: 0 8px 25px rgba(0,0,0,.07);
+}
+
+.memory-card img,
+.memory-card video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background: #111;
+}
+
+.photo-memory img {
+    cursor: pointer;
+    transition: transform .25s ease;
+}
+
+.photo-memory img:active {
+    transform: scale(.97);
+}
+
+.memory-caption {
+    padding: 10px 9px 12px;
+    text-align: center;
     font-size: 13px;
+    line-height: 1.5;
+}
+
+.memories-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 45px 20px;
+    border-radius: 24px;
+    background: var(--card-bg, rgba(255,255,255,.75));
+    border: 1px dashed rgba(120,120,120,.25);
+}
+
+.memories-empty div {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.memories-empty p {
+    margin: 0 0 7px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.memories-empty span {
+    font-size: 13px;
+    opacity: .65;
+}
+
+.memory-viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    background: rgba(0,0,0,.94);
+}
+
+.memory-viewer img {
+    max-width: 100%;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 14px;
+}
+
+.memory-viewer > div:last-child {
+    color: #fff;
+    margin-top: 14px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.memory-viewer-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,.15);
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 420px) {
+    .memories-gallery {
+        gap: 9px;
+    }
+
+    .memory-card {
+        border-radius: 16px;
+    }
+
+    .memory-caption {
+        font-size: 12px;
+    }
+}
+
+/* AYOSHTI-DUAS-PRO-2026 */
+
+#duasSection {
+    padding-bottom: 35px;
+}
+
+.duas-categories-pro {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin: 24px 0 10px;
+}
+
+.dua-category-card-pro {
+    width: 100%;
+    min-height: 82px;
+    border: 1px solid rgba(169, 92, 125, 0.16);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 7px 22px rgba(90, 45, 65, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    text-align: right;
+    direction: rtl;
+    transition: transform .18s ease, box-shadow .18s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.dua-category-card-pro:active {
+    transform: scale(.98);
+}
+
+.dua-category-icon-pro {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 17px;
+    background: linear-gradient(135deg, #fff1f6, #f8dce8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+.dua-category-text-pro {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dua-category-text-pro strong {
+    color: #74435b;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.dua-category-text-pro small {
+    color: #8d7881;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.dua-category-arrow {
+    color: #b66b8c;
+    font-size: 27px;
+    font-weight: 300;
+}
+
+.dua-inner-back-pro {
+    border: 0;
+    border-radius: 15px;
+    background: #f8e8ef;
+    color: #8b4f6a;
+    padding: 11px 17px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.dua-reader-header-pro {
+    direction: rtl;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 3px 14px;
+}
+
+.dua-reader-header-pro div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dua-reader-header-pro small {
+    color: #a8788d;
+    font-size: 12px;
+}
+
+.dua-reader-header-pro strong {
+    color: #704257;
+    font-size: 19px;
+}
+
+.dua-reader-header-pro > span {
+    background: #f5dce6;
+    color: #8a4f69;
+    border-radius: 20px;
+    padding: 7px 11px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.dua-reader-card-pro {
+    direction: rtl;
+    text-align: center;
+    background: linear-gradient(145deg, #fffafd, #fdf0f5);
+    border: 1px solid rgba(169, 92, 125, 0.15);
+    border-radius: 28px;
+    padding: 30px 23px 25px;
+    box-shadow: 0 12px 32px rgba(90, 45, 65, 0.10);
+    min-height: 310px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer !important;
+}
+
+.dua-reader-icon-pro {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.dua-reader-label-pro {
+    color: #a15e7c;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.dua-reader-card-pro p {
+    color: #513b45;
+    font-size: 21px;
+    line-height: 2.05;
+    margin: 0;
+}
+
+.dua-swipe-hint,
+.dua-finished-hint {
+    margin-top: 24px;
+    color: #ad8193;
+    font-size: 11px;
+}
+
+.dua-reader-navigation-pro {
+    display: flex;
+    gap: 11px;
+    direction: rtl;
+    margin-top: 15px;
+}
+
+.dua-nav-button {
+    flex: 1;
+    min-height: 50px;
+    border-radius: 17px;
+    font-size: 15px;
+    font-weight: 800;
+    border: 0;
+}
+
+.dua-nav-button.primary {
+    background: linear-gradient(135deg, #c8789a, #a95c7d);
+    color: white;
+    box-shadow: 0 7px 18px rgba(169, 92, 125, .22);
+}
+
+.dua-nav-button.secondary {
+    background: #f4e5eb;
+    color: #80506a;
+}
+
+.dua-nav-button:disabled {
+    opacity: .38;
+}
+
+.dua-empty-pro {
+    direction: rtl;
+    text-align: center;
+    background: #fff;
+    border-radius: 22px;
+    padding: 35px 20px;
+    color: #927785;
+    box-shadow: 0 7px 22px rgba(90, 45, 65, .07);
+}
+
+.my-dua-add-button-pro {
+    width: 100%;
+    min-height: 50px;
+    border: 0;
+    border-radius: 17px;
+    background: linear-gradient(135deg, #d98faf, #a95c7d);
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.my-duas-list-pro {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.dua-card-pro {
+    direction: rtl;
+    text-align: right;
+    background: white;
+    border-radius: 21px;
+    padding: 19px;
+    box-shadow: 0 7px 22px rgba(90, 45, 65, .08);
+}
+
+.my-dua-title-pro {
+    color: #77465d;
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.dua-card-pro p {
+    color: #5e4b54;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+.dua-delete-button-pro {
+    border: 0;
+    border-radius: 12px;
+    background: #f9e7ed;
+    color: #9a526f;
+    padding: 8px 13px;
+    font-weight: 700;
+}
+
+.my-dua-form-pro {
+    direction: rtl;
+    background: #fff;
+    border-radius: 21px;
+    padding: 16px;
+    margin-bottom: 15px;
+    box-shadow: 0 7px 22px rgba(90, 45, 65, .08);
+}
+
+.my-dua-form-pro input,
+.my-dua-form-pro textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ecd5df;
+    border-radius: 14px;
+    padding: 13px;
+    margin-bottom: 10px;
+    background: #fffafd;
+    color: #503c46;
+    font-family: inherit;
+}
+
+.my-dua-form-pro textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.my-dua-form-buttons-pro {
+    display: flex;
+    gap: 9px;
+}
+
+.my-dua-form-buttons-pro button {
+    flex: 1;
+    min-height: 44px;
+    border: 0;
+    border-radius: 13px;
+    background: #f2dce6;
+    color: #77465d;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   AYOSHTI - QURAN
+   ========================================================= */
+
+#quranSection {
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+
+#quranContent {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 18px;
+}
+
+.quran-toolbar {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.quran-surahs {
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.quran-surah-card {
+    width: 100%;
+    min-height: 72px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid rgba(169,87,120,.08);
+    border-radius: 18px;
+    background: rgba(255,255,255,.92);
+    color: var(--text);
+    text-align: right;
+    box-shadow: 0 7px 20px rgba(110,58,78,.055);
+}
+
+.quran-surah-number {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: #f7e9ef;
+    color: #a95c7d;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.quran-surah-name {
+    min-width: 0;
+    flex: 1;
+    color: #55434b;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.quran-reader {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.quran-ayah {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 24px 18px;
+    margin-bottom: 18px;
+    border-radius: 22px;
+    background: rgba(255,255,255,.94);
+    box-shadow: 0 9px 25px rgba(110,58,78,.065);
+    color: #4f3d45;
+    font-size: 21px;
+    line-height: 2.2;
+    text-align: center;
+    direction: rtl;
+}
+
+.quran-controls {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.quran-controls button {
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 15px;
+    background: #f4e4eb;
+    color: #8f506b;
+    font-weight: 800;
+}
+
+.quran-last-position {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 15px;
+    margin-bottom: 15px;
+    border-radius: 17px;
+    background: #faf1f5;
+    color: #8f6877;
+    text-align: right;
+    font-size: 12px;
+}
+
+@media (max-width: 480px) {
+    .quran-surahs {
+        grid-template-columns: 1fr;
+    }
+
+    .quran-ayah {
+        font-size: 19px;
+        line-height: 2.15;
+        padding: 21px 15px;
+    }
+}
+
+
+/* =========================================================
+   AYOSHTI — FINAL QURAN DESIGN
+   ========================================================= */
+
+#quranSection {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#quranContent {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* ---------- Quran Home ---------- */
+
+.quran-home {
+    width: 100%;
+}
+
+.quran-reading-resume {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 20px;
+    margin-bottom: 25px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #fff8fb, #f8f1f6);
+    border: 1px solid rgba(169, 92, 125, .16);
+    box-shadow: 0 8px 25px rgba(80, 40, 60, .07);
+}
+
+.quran-resume-symbol {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    color: #A95C7D;
+    font-size: 25px;
+    box-shadow: 0 4px 15px rgba(80, 40, 60, .08);
+}
+
+.quran-resume-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.quran-resume-info span {
+    font-size: 12px;
+    color: #9a7b89;
+}
+
+.quran-resume-info strong {
+    color: #563746;
+    font-size: 18px;
+}
+
+.quran-resume-info small {
+    color: #9a7b89;
+}
+
+.quran-resume-button {
+    border: 0;
+    border-radius: 14px;
+    padding: 11px 16px;
+    background: #A95C7D;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.quran-resume-button span {
+    margin-right: 5px;
+}
+
+.quran-section-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 4px 14px;
+}
+
+.quran-section-label span {
+    font-size: 21px;
+    font-weight: 800;
+    color: #563746;
+}
+
+.quran-section-label small {
+    color: #9a7b89;
+}
+
+/* ---------- Surah Grid ---------- */
+
+.quran-surah-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.quran-surah-card {
+    position: relative;
+    min-height: 104px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px;
+    border: 1px solid rgba(169, 92, 125, .13);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(70, 35, 55, .06);
+    color: #563746;
+    cursor: pointer;
+    text-align: right;
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        border-color .18s ease;
+}
+
+.quran-surah-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(70, 35, 55, .11);
+    border-color: rgba(169, 92, 125, .3);
+}
+
+.quran-surah-card:active {
+    transform: scale(.97);
+}
+
+.quran-card-number {
+    width: 45px;
+    height: 45px;
+    flex: 0 0 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #faf1f5;
+    color: #A95C7D;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.quran-card-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.quran-card-content strong {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.quran-card-content small {
+    color: #a18491;
+    font-size: 11px;
+}
+
+.quran-card-arrow {
+    color: #C98AA5;
+    font-size: 17px;
+}
+
+/* ---------- Reader ---------- */
+
+.quran-reader {
+    width: 100%;
+}
+
+.quran-reader-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.quran-surah-title {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.quran-surah-title span {
+    font-size: 23px;
+    font-weight: 800;
+    color: #563746;
+}
+
+.quran-surah-title small {
+    color: #9a7b89;
+}
+
+.quran-back-to-surahs {
+    border: 0;
+    background: transparent;
+    color: #A95C7D;
+    font-weight: 700;
+    padding: 9px 4px;
+    cursor: pointer;
+}
+
+/* ---------- Ayah Main Area ---------- */
+
+.quran-ayah-card {
+    position: relative;
+    min-height: 430px;
+    padding: 32px 28px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background:
+        radial-gradient(circle at top, rgba(217,143,175,.12), transparent 42%),
+        #fff;
+    border: 1px solid rgba(169,92,125,.13);
+    box-shadow: 0 12px 35px rgba(70,35,55,.08);
+    overflow: hidden;
+}
+
+.quran-tap-area {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.quran-ayah-top {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    left: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quran-ayah-label {
+    color: #b58b9d;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.quran-ayah-number {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #faf1f5;
+    color: #A95C7D;
+    font-weight: 800;
+}
+
+.quran-ayah-decoration {
+    color: #D98FAF;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.quran-ayah-text {
+    width: 100%;
+    max-width: 820px;
+    text-align: center;
+    direction: rtl;
+    font-size: clamp(25px, 4vw, 38px);
+    line-height: 2.25;
+    color: #38252e;
+    font-family: "Amiri", "Noto Naskh Arabic", "Traditional Arabic", serif;
+}
+
+.quran-tap-area:active .quran-ayah-text {
+    transform: scale(.99);
+}
+
+.quran-tap-hint {
+    margin-top: 28px;
+    color: #b79aa7;
+    font-size: 11px;
+    opacity: .75;
+}
+
+/* ---------- Reader Controls ---------- */
+
+.quran-reader-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.quran-reader-controls button {
+    min-height: 46px;
+    padding: 10px 17px;
+    border: 1px solid rgba(169,92,125,.15);
+    border-radius: 15px;
+    background: #fff;
+    color: #694455;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(70,35,55,.05);
+    transition: .18s ease;
+}
+
+.quran-reader-controls button:hover {
+    border-color: rgba(169,92,125,.35);
+    transform: translateY(-2px);
+}
+
+.quran-reader-controls button:nth-child(2) {
+    background: #A95C7D;
+    color: white;
+    border-color: #A95C7D;
+    min-width: 90px;
+}
+
+.quran-reader-controls button:disabled {
+    opacity: .35;
+    cursor: default;
+    transform: none;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 700px) {
+
+    .quran-surah-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .quran-surah-card {
+        min-height: 92px;
+        padding: 12px;
+        border-radius: 17px;
+        gap: 9px;
+    }
+
+    .quran-card-number {
+        width: 39px;
+        height: 39px;
+        flex-basis: 39px;
+        border-radius: 12px;
+    }
+
+    .quran-card-content strong {
+        font-size: 15px;
+    }
+
+    .quran-card-content small {
+        font-size: 10px;
+    }
+
+    .quran-card-arrow {
+        display: none;
+    }
+
+    .quran-reading-resume {
+        padding: 14px;
+    }
+
+    .quran-resume-symbol {
+        width: 45px;
+        height: 45px;
+        flex-basis: 45px;
+    }
+
+    .quran-resume-button {
+        padding: 10px 12px;
+    }
+
+    .quran-ayah-card {
+        min-height: 470px;
+        padding: 55px 18px 25px;
+        border-radius: 25px;
+    }
+
+    .quran-ayah-text {
+        font-size: 25px;
+        line-height: 2.15;
+    }
+
+    .quran-reader-controls {
+        gap: 7px;
+    }
+
+    .quran-reader-controls button {
+        flex: 1;
+        padding: 10px 6px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .quran-surah-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quran-reader-controls button {
+        font-size: 11px;
+    }
+}
+
+
+/* ================================
+   AYOSHTI — NASHEEDS DESIGN
+   ================================ */
+
+#nasheedsSection {
+    direction: rtl;
+}
+
+#nasheedsSection .section-subtitle {
+    margin-bottom: 20px;
+}
+
+.nasheeds-player {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 22px;
+    padding: 20px 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(169, 92, 125, 0.12);
+    border: 1px solid rgba(169, 92, 125, 0.10);
+}
+
+.nasheed-cover {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #D98FAF, #A95C7D);
+    color: #fff;
+    font-size: 34px;
+    box-shadow: 0 8px 20px rgba(169, 92, 125, 0.22);
+}
+
+#nasheedTitle {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    color: #5f3d4d;
+    margin: 8px 0 6px;
+}
+
+#nasheedCounter {
+    text-align: center;
+    font-size: 13px;
+    color: #987582;
+    margin-bottom: 12px;
+}
+
+#nasheedAudio {
+    width: 100%;
+    display: block;
+    margin: 0 auto 16px;
+}
+
+.nasheed-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 8px;
+    width: 100%;
+}
+
+.nasheed-buttons button,
+.nasheed-modes button {
+    border: 0;
+    border-radius: 14px;
+    padding: 11px 8px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 13px;
+    background: #f8e9ef;
+    color: #7b4b5e;
+    cursor: pointer;
+}
+
+.nasheed-buttons button:hover,
+.nasheed-modes button:hover {
+    transform: translateY(-1px);
+}
+
+.nasheed-buttons button:active,
+.nasheed-modes button:active {
+    transform: scale(0.98);
+}
+
+.nasheed-modes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.nasheed-modes button.active {
+    background: #D98FAF;
+    color: #fff;
+}
+
+.nasheed-mode-text {
+    text-align: center;
+    margin: 14px 0 0;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: #fff7fa;
+    color: #8b6170;
+    font-size: 12px;
     line-height: 1.7;
+}
+
+.nasheed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nasheed-item {
+    width: 100%;
+    min-height: 48px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 13px;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid #f1dfe6;
+    color: #684653;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: right;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.nasheed-item::before {
+    content: "🎵";
+    flex: 0 0 auto;
+}
+
+.nasheed-item:hover {
+    background: #fff7fa;
+}
+
+.nasheed-item.active {
+    background: #f8e9ef;
+    border-color: #D98FAF;
+    color: #A95C7D;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 25px 15px;
+    color: #987582;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .nasheeds-player {
+        padding: 17px 13px;
+        border-radius: 19px;
+    }
+
+    #nasheedTitle {
+        font-size: 18px;
+    }
+
+    .nasheed-buttons {
+        grid-template-columns: 1fr 1.15fr 1fr;
+    }
+
+    .nasheed-buttons button,
+    .nasheed-modes button {
+        font-size: 12px;
+        padding: 10px 5px;
+        white-space: nowrap;
+    }
+
+    .nasheed-item {
+        min-height: 50px;
+        padding: 10px 12px;
+        font-size: 13px;
+    }
 }

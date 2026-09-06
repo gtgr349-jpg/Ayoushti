@@ -1,0 +1,133 @@
+/* ================= OFFLINE MEMORIES ================= */
+.memories-controls {
+    margin: 0 0 18px;
+    text-align: center;
+}
+
+.memory-add-button {
+    width: 100%;
+    border: 0;
+    border-radius: 22px;
+    padding: 18px 16px;
+    cursor: pointer;
+    background: var(--card-bg, rgba(255,255,255,.85));
+    box-shadow: 0 10px 28px rgba(0,0,0,.07);
+    border: 1px solid rgba(255,255,255,.65);
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.memory-add-button span { font-size: 30px; line-height: 1; }
+.memory-add-button strong { font-size: 17px; }
+.memory-add-button small { opacity: .65; font-size: 12px; }
+.memory-add-button:active { transform: scale(.985); }
+.memory-add-button:disabled { opacity: .65; cursor: wait; }
+
+.memory-storage-note {
+    margin-top: 9px;
+    font-size: 12px;
+    opacity: .62;
+}
+
+.memories-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.offline-memory-card { position: relative; }
+
+.memory-media-wrap {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.memory-card img,
+.memory-card video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background: #111;
+}
+
+.memory-card video { aspect-ratio: 1 / 1; }
+.memory-card img { cursor: zoom-in; }
+
+.memory-type-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 5px 8px;
+    border-radius: 12px;
+    background: rgba(0,0,0,.58);
+    color: #fff;
+    font-size: 11px;
+    backdrop-filter: blur(6px);
+}
+
+.memory-open-button {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0,0,0,.58);
+    color: #fff;
+    font-size: 18px;
+}
+
+.memory-card-info {
+    padding: 9px;
+}
+
+.memory-file-name {
+    font-size: 12px;
+    font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.memory-file-size {
+    font-size: 11px;
+    opacity: .55;
+    margin-top: 3px;
+}
+
+.memory-delete-button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 7px;
+    border: 0;
+    border-radius: 11px;
+    background: rgba(180,40,40,.09);
+    color: inherit;
+    font-size: 11px;
+}
+
+.memory-viewer { z-index: 99999; }
+
+@media (max-width: 420px) {
+    .memories-gallery { gap: 9px; }
+    .memory-card-info { padding: 8px; }
+}
+
+/* تحسين مؤشر الماوس في قسم الذكريات */
+.memories-intro,
+.memories-intro h3,
+.memories-intro p {
+    cursor: default !important;
+}
+
+.memory-media-wrap img {
+    cursor: pointer !important;
+}
+
+.memory-open-button {
+    cursor: pointer !important;
+}

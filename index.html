@@ -1,49 +1,53 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <title>ايوشتي 🌙</title>
 
-    <link
-        rel="manifest"
-        href="./manifest.json"
-    >
+    <link rel="manifest" href="./manifest.json">
 
-    <meta
-        name="theme-color"
-        content="#ffffff"
-    >
+    <meta name="theme-color" content="#fff8fb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <link rel="stylesheet" href="./style.css">
 </head>
-
 
 <body>
 
-    <div class="app">
+<div class="app">
 
+    <!-- ================= HEADER ================= -->
 
-        <!-- =========================
-             HEADER
-        ========================== -->
+<header class="header">
 
-        <header class="header">
+    <div class="header-actions">
 
-            <div class="logo">
-                🌙
-            </div>
+        <button
+            class="header-settings"
+            onclick="openSection('settings')"
+            aria-label="الإعدادات">
+
+            ⚙️
+
+        </button>
+
+    </div>
+
+    <div class="header-top">
+
+        <div class="logo">
+            🌙
+        </div>
+
+        <div class="header-text">
+
+            <span class="welcome-text">
+                أهلًا يا أيوشتي 🤍
+            </span>
 
             <h1>
                 ايوشتي
@@ -53,353 +57,888 @@
                 رفيقتك في رحلة إلى بيت الله 🕋
             </p>
 
-        </header>
+        </div>
 
+    </div>
 
+    <div class="header-decoration">
+        ✦
+    </div>
 
-        <!-- =========================
-             TRIP STATUS
-        ========================== -->
+</header>
 
-        <section class="trip-card">
+<!-- ================= TRIP CARD ================= -->
 
-            <div
-                id="tripIcon"
-                class="trip-icon"
-            >
-                ✈️
+    <section class="trip-card">
+
+        <div class="trip-glow"></div>
+
+        <div class="trip-top">
+
+            <div class="trip-icon-wrapper">
+                <div id="tripIcon" class="trip-icon">
+                    ✈️
+                </div>
             </div>
+
+            <div class="trip-status-label">
+                رحلتك
+            </div>
+
+        </div>
+
+        <div class="trip-content">
 
             <h2 id="tripTitle">
                 جاري تحميل الرحلة...
             </h2>
 
-            <div
-                id="tripDay"
-                class="trip-day"
-            >
+            <div id="tripDay" class="trip-day">
                 ...
             </div>
 
-            <p
-                id="tripMessage"
-                class="trip-message"
-            >
+            <p id="tripMessage" class="trip-message">
                 ربنا يحفظك يا أيوشتي 🤍
             </p>
 
-        </section>
+        </div>
+
+        <div class="trip-stars">
+            ✦　✧　✦
+        </div>
+
+    </section>
 
 
+    <!-- ================= MESSAGE ================= -->
 
-        <!-- =========================
-             MESSAGE FROM ESLAM
-        ========================== -->
+    <section class="message-card">
 
-        <section class="message-card">
+        <div class="message-header">
 
-            <div class="section-title">
-                💌 رسالة من إسلام
+            <div class="message-icon">
+                💌
             </div>
 
-            <p>
-                يا رب احفظ أيوشتي في طريقها،
-                واكتب لها في كل خطوة أجرًا،
-                وفي كل دعاء قبولًا،
-                وارزقها راحة البال والعوض الجميل. 🤲🏻❤️
-            </p>
+            <div>
+                <span>رسالة خاصة</span>
+                <h3>من إسلام</h3>
+            </div>
 
-        </section>
+        </div>
+
+        <div class="message-divider"></div>
+
+        <p>
+            يا أيوشتي،
+            ربنا يحفظك في كل خطوة،
+            ويجعل رحلتك كلها طمأنينة وبركة،
+            ويكتب لكِ في كل دعاء قبولًا
+            وفي كل خطوة أجرًا. 🤲🏻❤️
+        </p>
+
+        <div class="message-signature">
+            بحبك ❤️ — إسلام
+        </div>
+
+    </section>
 
 
+    <!-- ================= NOTIFICATION ================= -->
 
-        <!-- =========================
-             NOTIFICATIONS
-        ========================== -->
+    <button
+        id="notificationButton"
+        class="primary-button notification-button"
+        onclick="enableAyoushtiNotifications()">
 
-        <button
-            id="notificationButton"
-            class="primary-button"
-            onclick="enableAyoushtiNotifications()"
-        >
+        <span class="notification-icon">
+            🔔
+        </span>
 
-            🔔 فعّلي رسائل إسلام
+        <span>
+            فعّلي رسائل إسلام
+        </span>
+
+        <span class="button-arrow">
+            ←
+        </span>
+
+    </button>
+
+
+    <!-- ================= HOME MENU ================= -->
+
+    <section class="menu">
+
+        <div class="home-section-heading">
+
+            <div>
+                <span>كل اللي تحتاجيه</span>
+                <h2>رحلتك بين إيديك 🤍</h2>
+            </div>
+
+            <div class="heading-star">
+                ✦
+            </div>
+
+        </div>
+
+
+        <!-- عمرتي -->
+
+        <button onclick="openSection('umrah')">
+
+            <div class="menu-icon umrah-icon">
+                🕋
+            </div>
+
+            <div class="menu-text">
+
+                <strong>
+                    عمرتي
+                </strong>
+
+                <span>
+                    دليلك لأداء المناسك
+                </span>
+
+            </div>
+
+            <div class="menu-arrow">
+                ←
+            </div>
 
         </button>
 
 
+        <!-- أدعيتي -->
 
-        <!-- =========================
-             MAIN MENU
-        ========================== -->
+        <button onclick="openSection('duas')">
 
-        <section class="menu">
-
-
-            <button
-                onclick="openSection('umrah')"
-            >
-
-                🕋
-
-                <span>
-                    عمرتي
-                </span>
-
-            </button>
-
-
-
-            <button
-                onclick="openSection('duas')"
-            >
-
+            <div class="menu-icon dua-icon">
                 🤲
+            </div>
 
-                <span>
+            <div class="menu-text">
+
+                <strong>
                     أدعيتي
+                </strong>
+
+                <span>
+                    أدعية وأذكار الرحلة
                 </span>
 
-            </button>
+            </div>
+
+            <div class="menu-arrow">
+                ←
+            </div>
+
+        </button>
+        <button onclick="openSection('quran')">
+
+            <div class="menu-icon" style="background:#f0e8f5;">
+                📖
+            </div>
+
+            <div class="menu-text">
+
+                <strong>
+                    القرآن الكريم
+                </strong>
+
+                <span>
+                    قراءة القرآن الكريم أثناء الرحلة
+                </span>
+
+            </div>
+
+            <div class="menu-arrow">
+                ←
+            </div>
+
+        </button>
+
+        <button type="button" onclick="openSection('hadith')">
+
+            <div class="menu-icon" style="background:#f8e9ef;">
+                ﷺ
+            </div>
+
+            <div class="menu-text">
+                <strong>
+                    الأحاديث النبوية
+                </strong>
+
+                <span>
+                    أحاديث مختارة تتعلق بالعمرة
+                </span>
+            </div>
+
+            <div class="menu-arrow">
+                ←
+            </div>
+
+        </button>
+        <button type="button" onclick="openSection('nasheeds')">
+            <div class="menu-icon" style="background:#f3eaf7;">
+                🎵
+            </div>
+
+            <div class="menu-text">
+                <strong>الأناشيد والتواشيح</strong>
+                <span>أناشيد وتواشيح ترافقك في رحلتك</span>
+            </div>
+
+            <div class="menu-arrow">
+                ←
+            </div>
+        </button>
 
 
 
-            <button
-                onclick="openSection('journey')"
-            >
+        <!-- رحلتي -->
 
+        <button onclick="openSection('journey')">
+
+            <div class="menu-icon journey-icon">
                 📅
+            </div>
 
-                <span>
+            <div class="menu-text">
+
+                <strong>
                     رحلتي
+                </strong>
+
+                <span>
+                    خطة الأيام الـ 14
                 </span>
 
-            </button>
+            </div>
+
+            <div class="menu-arrow">
+                ←
+            </div>
+
+        </button>
 
 
+                <!-- ذكريات الرحلة -->
 
-            <button
-                onclick="openSection('rating')"
-            >
+        <button onclick="openSection('memories')">
 
+            <div class="menu-icon">
+                📸
+            </div>
+
+            <div class="menu-text">
+
+                <strong>
+                    ذكريات الرحلة
+                </strong>
+
+                <span>
+                    صور وفيديوهات أيوشتي 🤍
+                </span>
+
+            </div>
+
+            <div class="menu-arrow">
+                ←
+            </div>
+
+        </button>
+
+<!-- تقييمي -->
+
+        <button onclick="openSection('rating')">
+
+            <div class="menu-icon rating-icon">
                 ⭐
+            </div>
 
-                <span>
+            <div class="menu-text">
+
+                <strong>
                     تقييمي
-                </span>
-
-            </button>
-
-
-
-            <button
-                onclick="openSection('messages')"
-            >
-
-                💌
+                </strong>
 
                 <span>
-                    من إسلام
+                    تابعي يومك وروحك
                 </span>
 
-            </button>
+            </div>
 
+            <div class="menu-arrow">
+                ←
+            </div>
 
-        </section>
+        </button>
 
 
+        <!-- من إسلام -->
 
-        <!-- =========================
-             JOURNEY SECTION
-        ========================== -->
+        <button
+            onclick="openSection('messages')"
+            class="menu-wide">
 
-        <section
-            id="journeySection"
-            class="page-section hidden"
-        >
+            <div class="menu-icon message-menu-icon">
+                💌
+            </div>
 
-            <button
-                class="back-button"
-                onclick="closeSections()"
-            >
+            <div class="menu-text">
 
-                ← الرئيسية
+                <strong>
+                    من إسلام
+                </strong>
 
-            </button>
+                <span>
+                    رسائل وأدعية خاصة لأيوشتي ❤️
+                </span>
 
+            </div>
 
-            <h2>
-                📅 رحلتي
-            </h2>
+            <div class="menu-arrow">
+                ←
+            </div>
 
+        </button>
 
-            <p class="section-subtitle">
-                رحلة أيوشتي إلى بيت الله 🤍
-            </p>
 
+        <!-- NOTE -->
 
-            <div id="journeyList"></div>
+        <div class="home-note">
 
-        </section>
+            <div class="home-note-icon">
+                🤍
+            </div>
 
+            <div>
 
+                <strong>
+                    خدي الرحلة بهدوء
+                </strong>
 
-        <!-- =========================
-             UMRAH SECTION
-        ========================== -->
+                <p>
+                    واستمتعي بكل لحظة مع ربنا.
+                </p>
 
-        <section
-            id="umrahSection"
-            class="page-section hidden"
-        >
+            </div>
 
-            <button
-                class="back-button"
-                onclick="closeSections()"
-            >
+        </div>
 
-                ← الرئيسية
+    </section>
 
-            </button>
 
+    <!-- ================= SETTINGS ================= -->
 
-            <h2>
-                🕋 عمرتي
-            </h2>
+<section id="settingsSection" class="page-section hidden">
 
+    <button
+        class="back-button"
+        onclick="closeSections()">
 
-            <p>
-                هنا سنضع دليل العمرة خطوة بخطوة.
-            </p>
+        ← الرئيسية
 
-        </section>
+    </button>
 
+    <h2>
+        ⚙️ الإعدادات
+    </h2>
 
+    <p class="section-subtitle">
+        خلي أيوشتي على ذوقك 🤍
+    </p>
 
-        <!-- =========================
-             DUAS SECTION
-        ========================== -->
 
-        <section
-            id="duasSection"
-            class="page-section hidden"
-        >
+    <!-- الإشعارات -->
 
-            <button
-                class="back-button"
-                onclick="closeSections()"
-            >
+    <div class="settings-card">
 
-                ← الرئيسية
+        <div class="settings-title">
 
-            </button>
+            <div class="settings-icon">
+                🔔
+            </div>
 
+            <div>
+                <strong>
+                    الإشعارات
+                </strong>
 
-            <h2>
-                🤲 أدعيتي
-            </h2>
+                <span>
+                    رسائل وتنبيهات الرحلة
+                </span>
+            </div>
 
+        </div>
 
-            <p>
-                هنا ستكون مكتبة الأدعية والأذكار.
-            </p>
+        <button
+            class="settings-button"
+            onclick="enableAyoushtiNotifications()">
 
-        </section>
+            تفعيل الإشعارات
 
+            <span>
+                ←
+            </span>
 
-
-        <!-- =========================
-             RATING SECTION
-        ========================== -->
-
-        <section
-            id="ratingSection"
-            class="page-section hidden"
-        >
-
-            <button
-                class="back-button"
-                onclick="closeSections()"
-            >
-
-                ← الرئيسية
-
-            </button>
-
-
-            <h2>
-                ⭐ تقييمي
-            </h2>
-
-
-            <p>
-                هنا سيكون التقييم اليومي.
-            </p>
-
-        </section>
-
-
-
-        <!-- =========================
-             MESSAGES SECTION
-        ========================== -->
-
-        <section
-            id="messagesSection"
-            class="page-section hidden"
-        >
-
-            <button
-                class="back-button"
-                onclick="closeSections()"
-            >
-
-                ← الرئيسية
-
-            </button>
-
-
-            <h2>
-                💌 من إسلام
-            </h2>
-
-
-            <p>
-                هنا ستكون رسائلك وأدعيتك الخاصة لأيوشتي ❤️
-            </p>
-
-        </section>
-
-
-
-        <!-- =========================
-             FOOTER
-        ========================== -->
-
-        <footer>
-            صممه إسلام عاشور ❤️
-        </footer>
-
+        </button>
 
     </div>
 
 
+    <!-- المظهر -->
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
+<div class="settings-card">
 
-    <!-- مهم:
-         journey.js قبل app.js
-    -->
+    <div class="settings-title">
 
-    <script src="./journey.js"></script>
-<script src="./app.js"></script>
+        <div class="settings-icon">
+            🌙
+        </div>
+
+        <div>
+            <strong>
+                مظهر التطبيق
+            </strong>
+
+            <span>
+                اختاري المظهر المناسب لكِ
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="theme-options">
+
+        <button
+            class="settings-option active"
+            onclick="setAyoushtiTheme('calm')">
+
+            🌸 المظهر الهادئ
+
+            <span>✓</span>
+
+        </button>
+
+
+        <button
+            class="settings-option"
+            onclick="setAyoushtiTheme('night')">
+
+            🌙 المظهر الليلي
+
+            <span>✓</span>
+
+        </button>
+
+
+        <button
+            class="settings-option"
+            onclick="setAyoushtiTheme('light')">
+
+            ☀️ المظهر الفاتح
+
+            <span>✓</span>
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- حجم الخط -->
+
+    <div class="settings-card">
+
+        <div class="settings-title">
+
+            <div class="settings-icon">
+                🔤
+            </div>
+
+            <div>
+                <strong>
+                    حجم الخط
+                </strong>
+
+                <span>
+                    اختاري الحجم المناسب للقراءة
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="font-options">
+
+            <button
+                onclick="setFontSize('small')">
+
+                صغير
+
+            </button>
+
+            <button
+                class="active"
+                onclick="setFontSize('normal')">
+
+                عادي
+
+            </button>
+
+            <button
+                onclick="setFontSize('large')">
+
+                كبير
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- بيانات الرحلة -->
+
+    <div class="settings-card">
+
+        <div class="settings-title">
+
+            <div class="settings-icon">
+                💾
+            </div>
+
+            <div>
+                <strong>
+                    بيانات الرحلة
+                </strong>
+
+                <span>
+                    تقدم العمرة محفوظ على الجهاز
+                </span>
+            </div>
+
+        </div>
+
+
+        <button
+            class="settings-danger"
+            onclick="resetAyoushtiData()">
+
+            إعادة ضبط بيانات الرحلة
+
+            <span>
+                ↻
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- عن التطبيق -->
+
+    <div class="settings-card">
+
+        <div class="settings-title">
+
+            <div class="settings-icon">
+                ❤️
+            </div>
+
+            <div>
+                <strong>
+                    عن أيوشتي
+                </strong>
+
+                <span>
+                    رفيقتك في رحلة العمرة
+                </span>
+            </div>
+
+        </div>
+
+
+        <p class="settings-about">
+
+            أيوشتي تطبيق صغير معمول بحب،
+            علشان يكون معاكي في رحلتك إلى بيت الله،
+            ويفكرك دايمًا إن في حد بيدعيلك ويحبك. 🤍
+
+        </p>
+
+
+        <div class="settings-signature">
+
+            صنع بحب ❤️ — إسلام عاشور
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= MEMORIES ================= -->
+<section id="memoriesSection" class="page-section hidden">
+
+    <div class="section-header">
+        <button class="back-button" onclick="closeSections()">←</button>
+
+        <div>
+            <h2>📸 ذكريات الرحلة</h2>
+            <p>لحظات أيوشتي الجميلة 🤍</p>
+        </div>
+    </div>
+
+    <div class="memories-intro">
+        <div class="memories-icon">📸</div>
+
+        <h3>لحظات من الرحلة</h3>
+
+        <p>
+            هنا هتلاقي صور وفيديوهات الرحلة محفوظة داخل التطبيق
+            وتشتغل بدون إنترنت 🤍
+        </p>
+    </div>
+
+    <div id="memoryFilters" class="memory-filters">
+        <button type="button" class="active" data-filter="all" onclick="setAyoushtiMemoryFilter('all')">الكل <b>0</b></button>
+        <button type="button" data-filter="photos" onclick="setAyoushtiMemoryFilter('photos')">📸 الصور <b>0</b></button>
+        <button type="button" data-filter="videos" onclick="setAyoushtiMemoryFilter('videos')">🎥 الفيديوهات <b>0</b></button>
+    </div>
+
+    <div id="memoriesGallery" class="memories-gallery">
+
+        <div class="memories-empty">
+            <div>🤍</div>
+            <p>لسه مفيش ذكريات مضافة</p>
+            <span>أضف الصور والفيديوهات داخل مجلد الرحلة</span>
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= JOURNEY ================= -->
+
+    <section id="journeySection" class="page-section hidden">
+
+        <button
+            class="back-button"
+            onclick="closeSections()">
+
+            ← الرئيسية
+
+        </button>
+
+        <h2>
+            📅 رحلتي
+        </h2>
+
+        <p class="section-subtitle">
+            رحلة أيوشتي إلى بيت الله 🤍
+        </p>
+
+        <div id="journeyList"></div>
+
+    </section>
+
+
+    <!-- ================= UMRAH ================= -->
+
+    <section id="umrahSection" class="page-section hidden">
+
+        <button
+            class="back-button"
+            onclick="closeSections()">
+
+            ← الرئيسية
+
+        </button>
+
+        <h2>
+            🕋 عمرتي
+        </h2>
+
+        <p class="section-subtitle">
+            دليلك خطوة بخطوة لأداء العمرة
+        </p>
+
+    </section>
+
+
+    <!-- ================= DUAS ================= -->
+
+<section id="duasSection" class="page-section hidden">
+
+    <button
+        class="back-button"
+        type="button"
+        onclick="window.duasBackToHome()">
+        ← الرئيسية
+    </button>
+
+    <h2>🤲 أدعيتي</h2>
+
+    <p class="section-subtitle">
+        أدعية وأذكار ترافقك في رحلتك
+    </p>
+
+    <div id="duasContent"></div>
+
+</section>
+
+
+    <!-- ================= QURAN ================= -->
+
+<section id="quranSection" class="page-section hidden">
+
+    <button
+        class="back-button"
+        type="button"
+        onclick="window.quranBackToHome()">
+        ← الرئيسية
+    </button>
+
+    <h2>📖 القرآن الكريم</h2>
+
+    <p class="section-subtitle">
+        كتاب الله بين يديك في رحلتك
+    </p>
+
+    <div id="quranContent"></div>
+
+</section>
+<!-- ================= RATING ================= -->
+
+    <section id="hadithSection" class="page-section hidden">
+
+    <button
+        class="back-button"
+        type="button"
+        onclick="window.hadithBackToHome()">
+        ← الرئيسية
+    </button>
+
+    <h2>ﷺ الأحاديث النبوية</h2>
+
+    <p class="section-subtitle">
+        أحاديث مختارة ترافقك في رحلة العمرة
+    </p>
+
+    <div id="hadithContent"></div>
+
+</section>
+
+<section id="nasheedsSection" class="page-section hidden">
+
+    <button
+        class="back-button"
+        type="button"
+        onclick="window.nasheedsBackToHome()">
+        ← الرئيسية
+    </button>
+
+    <h2>🎵 الأناشيد والتواشيح</h2>
+
+    <p class="section-subtitle">
+        أناشيد وتواشيح ترافقك في رحلتك
+    </p>
+
+    <div id="nasheedsContent"></div>
+
+</section>
+<section id="ratingSection" class="page-section hidden">
+
+        <button
+            class="back-button"
+            onclick="closeSections()">
+
+            ← الرئيسية
+
+        </button>
+
+        <h2>
+            ⭐ تقييمي
+        </h2>
+
+        <p class="section-subtitle">
+            كيف كان يومك مع ربنا؟
+        </p>
+
+    </section>
+
+
+    <!-- ================= MESSAGES ================= -->
+
+    <section id="messagesSection" class="page-section hidden">
+
+        <button
+            class="back-button"
+            onclick="closeSections()">
+
+            ← الرئيسية
+
+        </button>
+
+        <h2>
+            💌 من إسلام
+        </h2>
+
+        <p class="section-subtitle">
+            رسائل وأدعية خاصة من إسلام لأيوشتي ❤️
+        </p>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        <span>صنع بحب</span>
+        ❤️
+        <strong>إسلام عاشور</strong>
+    </footer>
+
+</div>
+
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="./journey.js"></script>
 <script src="./map.js"></script>
+<script src="./notifications.js"></script>
+<script src="./app.js"></script>
+<script src="./duas.js"></script>
 
-<script type="module" src="./firebase-messaging.js"></script>
+<script
+    type="module"
+    src="./firebase-messaging.js">
+</script>
 
 
+<script src="./quran-data/quran-data.js"></script>
+<script src="./quran.js"></script>
+<script src="./hadith.js"></script>
+<script src="./nasheeds.js"></script>
 </body>
-
 </html>
+<link rel="stylesheet" href="./memories.css">
+
+<script src="./memories.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
