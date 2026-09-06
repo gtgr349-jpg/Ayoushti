@@ -1,92 +1,65 @@
-// ======================================================
-// 🔔 Ayoushti Notifications
-// ======================================================
-
-const LocalNotifications =
+﻿const LocalNotifications =
     window.Capacitor?.Plugins?.LocalNotifications;
 
 async function enableAyoushtiNotifications() {
 
-    if (!LocalNotifications) {
+    const button = document.getElementById("notificationButton");
 
-        console.error(
-            "❌ LocalNotifications plugin غير متاح"
-        );
+    if (LocalNotifications) {
+        try {
+            const permission =
+                await LocalNotifications.requestPermissions();
 
-        alert(
-            "الإشعارات غير متاحة حاليًا داخل التطبيق."
-        );
+            if (permission.display !== "granted") {
+                alert("âš ï¸ Ù„Ø§Ø²Ù… ØªØ³Ù…Ø­ÙŠ Ù„Ù„ØªØ·Ø¨ÙŠÙ‚ Ø¨Ø§Ù„Ø¥Ø´Ø¹Ø§Ø±Ø§Øª Ù…Ù† Ø¥Ø¹Ø¯Ø§Ø¯Ø§Øª Ø§Ù„Ù‡Ø§ØªÙ.");
+                return;
+            }
 
+            return;
+
+        } catch (error) {
+            console.error("âŒ Native Notification Error:", error);
+        }
+    }
+
+    if (!("Notification" in window)) {
+        alert("âš ï¸ Ø§Ù„Ø¥Ø´Ø¹Ø§Ø±Ø§Øª ØºÙŠØ± Ù…Ø¯Ø¹ÙˆÙ…Ø© Ø¹Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ø¬Ù‡Ø§Ø² Ø£Ùˆ Ø§Ù„Ù…ØªØµÙØ­.");
         return;
     }
 
     try {
 
-        // طلب الصلاحية
-        const permission =
-            await LocalNotifications.requestPermissions();
+        let permission = Notification.permission;
 
-        console.log(
-            "🔔 Notification permission:",
-            permission
-        );
+        if (permission === "default") {
+            permission = await Notification.requestPermission();
+        }
 
-        if (permission.display !== "granted") {
-
-            alert(
-                "⚠️ لازم تسمحي للتطبيق بالإشعارات من إعدادات الهاتف."
-            );
-
+        if (permission !== "granted") {
+            alert("âš ï¸ Ù„Ø§Ø²Ù… ØªØ³Ù…Ø­ÙŠ Ù„Ù„Ù…ØªØµÙØ­ Ø¨Ø¥Ø±Ø³Ø§Ù„ Ø§Ù„Ø¥Ø´Ø¹Ø§Ø±Ø§Øª.");
             return;
         }
 
-        // إشعار تجريبي
-        await LocalNotifications.schedule({
+        try {
 
-            notifications: [
+            const registration =
+                await navigator.serviceWorker.ready;
 
-                {
+        } catch (serviceWorkerError) {
 
-                    id: 1001,
+            console.warn(
+                "Service Worker notification failed:",
+                serviceWorkerError
+            );
+        }
 
-                    title: "🌙 أيوشتي",
-
-                    body:
-                        "😂 دي رسالة تجريبية من إسلام… أيوشتي، إسلام موجود يعني مفيش هروب من الرخامة ❤️",
-
-                    schedule: {
-                        at: new Date(
-                            Date.now() + 3000
-                        )
-                    },
-
-                    extra: {
-                        type: "test"
-                    }
-
-                }
-
-            ]
-
-        });
-
-        console.log(
-            "✅ تم جدولة الإشعار التجريبي"
-        );
-
-    }
-
-    catch (error) {
+    } catch (error) {
 
         console.error(
-            "❌ Notification Error:",
+            "âŒ Browser Notification Error:",
             error
         );
 
-        alert(
-            "حصل خطأ أثناء تفعيل الإشعارات."
-        );
-
+        alert("Ø­ØµÙ„ Ø®Ø·Ø£ Ø£Ø«Ù†Ø§Ø¡ ØªÙØ¹ÙŠÙ„ Ø§Ù„Ø¥Ø´Ø¹Ø§Ø±Ø§Øª.");
     }
-
 }

@@ -1,4 +1,4 @@
-const LocalNotifications =
+﻿const LocalNotifications =
     window.Capacitor?.Plugins?.LocalNotifications;
 
 async function enableAyoushtiNotifications() {
@@ -11,40 +11,19 @@ async function enableAyoushtiNotifications() {
                 await LocalNotifications.requestPermissions();
 
             if (permission.display !== "granted") {
-                alert("⚠️ لازم تسمحي للتطبيق بالإشعارات من إعدادات الهاتف.");
+                alert("âš ï¸ Ù„Ø§Ø²Ù… ØªØ³Ù…Ø­ÙŠ Ù„Ù„ØªØ·Ø¨ÙŠÙ‚ Ø¨Ø§Ù„Ø¥Ø´Ø¹Ø§Ø±Ø§Øª Ù…Ù† Ø¥Ø¹Ø¯Ø§Ø¯Ø§Øª Ø§Ù„Ù‡Ø§ØªÙ.");
                 return;
-            }
-
-            await LocalNotifications.schedule({
-                notifications: [{
-                    id: 1001,
-                    title: "🌙 أيوشتي",
-                    body: "😂 دي رسالة تجريبية من إسلام… أيوشتي، إسلام موجود يعني مفيش هروب من الرخامة ❤️",
-                    schedule: {
-                        at: new Date(Date.now() + 3000)
-                    },
-                    extra: {
-                        type: "test"
-                    }
-                }]
-            });
-
-            if (button) {
-                button.innerHTML =
-                    "<span>✅</span>" +
-                    "<span>رسائل إسلام مفعلة</span>" +
-                    "<small>هتوصلك التذكيرات خلال الرحلة 🤍</small>";
             }
 
             return;
 
         } catch (error) {
-            console.error("❌ Native Notification Error:", error);
+            console.error("âŒ Native Notification Error:", error);
         }
     }
 
     if (!("Notification" in window)) {
-        alert("⚠️ الإشعارات غير مدعومة على هذا الجهاز أو المتصفح.");
+        alert("âš ï¸ Ø§Ù„Ø¥Ø´Ø¹Ø§Ø±Ø§Øª ØºÙŠØ± Ù…Ø¯Ø¹ÙˆÙ…Ø© Ø¹Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ø¬Ù‡Ø§Ø² Ø£Ùˆ Ø§Ù„Ù…ØªØµÙØ­.");
         return;
     }
 
@@ -57,7 +36,7 @@ async function enableAyoushtiNotifications() {
         }
 
         if (permission !== "granted") {
-            alert("⚠️ لازم تسمحي للمتصفح بإرسال الإشعارات.");
+            alert("âš ï¸ Ù„Ø§Ø²Ù… ØªØ³Ù…Ø­ÙŠ Ù„Ù„Ù…ØªØµÙØ­ Ø¨Ø¥Ø±Ø³Ø§Ù„ Ø§Ù„Ø¥Ø´Ø¹Ø§Ø±Ø§Øª.");
             return;
         }
 
@@ -66,47 +45,21 @@ async function enableAyoushtiNotifications() {
             const registration =
                 await navigator.serviceWorker.ready;
 
-            await registration.showNotification(
-                "🌙 أيوشتي",
-                {
-                    body: "😂 دي رسالة تجريبية من إسلام… أيوشتي، إسلام موجود يعني مفيش هروب من الرخامة ❤️",
-                    icon: "./icon-192.png",
-                    badge: "./icon-192.png",
-                    tag: "ayoushti-test"
-                }
-            );
-
         } catch (serviceWorkerError) {
 
             console.warn(
                 "Service Worker notification failed:",
                 serviceWorkerError
             );
-
-            new Notification(
-                "🌙 أيوشتي",
-                {
-                    body: "😂 دي رسالة تجريبية من إسلام… أيوشتي، إسلام موجود يعني مفيش هروب من الرخامة ❤️",
-                    icon: "./icon-192.png",
-                    tag: "ayoushti-test"
-                }
-            );
-        }
-
-        if (button) {
-            button.innerHTML =
-                "<span>✅</span>" +
-                "<span>رسائل إسلام مفعلة</span>" +
-                "<small>هتوصلك التذكيرات خلال الرحلة 🤍</small>";
         }
 
     } catch (error) {
 
         console.error(
-            "❌ Browser Notification Error:",
+            "âŒ Browser Notification Error:",
             error
         );
 
-        alert("حصل خطأ أثناء تفعيل الإشعارات.");
+        alert("Ø­ØµÙ„ Ø®Ø·Ø£ Ø£Ø«Ù†Ø§Ø¡ ØªÙØ¹ÙŠÙ„ Ø§Ù„Ø¥Ø´Ø¹Ø§Ø±Ø§Øª.");
     }
 }
