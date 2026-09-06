@@ -2,7 +2,7 @@
 // 🌙 أيوشتي — Offline Service Worker
 // ======================================================
 
-const CACHE_NAME = "ayoushti-v3";
+const CACHE_NAME = "ayoushti-v4";
 
 const FILES_TO_CACHE = [
     "./",
@@ -158,4 +158,5 @@ self.addEventListener("fetch", event => {
 console.log(
     "🌙 أيوشتي Service Worker جاهز للعمل Offline"
 );
+
 
